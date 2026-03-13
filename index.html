@@ -474,35 +474,118 @@
             gap: 2rem;
         }
         
-        .step {
-            display: flex;
-            gap: 1.5rem;
-            align-items: start;
+        /* Your Next Steps Section */
+        .next-steps {
+            background: #F3F4F6;
+            padding: 4rem 1.5rem;
         }
         
-        .step-number {
-            flex-shrink: 0;
+        .next-steps-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .next-steps h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+        
+        .steps-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: start;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .step-number-badge {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
             width: 50px;
             height: 50px;
-            background: var(--titan-orange);
+            background: #DC2626;
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.75rem;
+            font-weight: 900;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            z-index: 2;
+        }
+        
+        .step-image {
+            flex-shrink: 0;
+            width: 140px;
+            height: 140px;
+            background: #E5E7EB;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin-left: 40px;
+        }
+        
+        .step-content {
+            flex: 1;
         }
         
         .step-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--titan-blue);
+            font-size: 1.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
         
-        .step-content p {
-            color: var(--text-secondary);
-            line-height: 1.7;
+        .step-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .step-bullets li {
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        .step-bullets li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .check-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: #DC2626;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 700;
+            margin-top: 0.125rem;
         }
         
         /* CTA Section */
@@ -632,6 +715,29 @@
             
             .special-offer h2 {
                 font-size: 2rem;
+            }
+            
+            .next-steps h2 {
+                font-size: 2rem;
+            }
+            
+            .step-card {
+                flex-direction: column;
+                padding-top: 4rem;
+            }
+            
+            .step-image {
+                margin-left: 0;
+                margin: 0 auto;
+            }
+            
+            .step-content h3 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            
+            .step-bullets {
+                text-align: left;
             }
         }
         
@@ -828,39 +934,64 @@
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works">
-        <h2>Start Testosterone Therapy in as Little as 5 Days</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Medical Questionnaire</h3>
-                    <p>Complete a brief health assessment. A licensed physician reviews your information and answers any questions.</p>
-                </div>
-            </div>
+    <!-- Your Next Steps -->
+    <section class="next-steps">
+        <div class="next-steps-content">
+            <h2>Your Next Steps</h2>
             
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>At-Home Blood Test</h3>
-                    <p>We mail you a comprehensive test kit. Results establish your baseline and help customize your treatment plan.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number-badge">1</div>
+                    <div class="step-image">💉</div>
+                    <div class="step-content">
+                        <h3>Check Your T Levels</h3>
+                        <ul class="step-bullets">
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <span>Easy 15-minute testosterone test</span>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <span>Visit one of 2,000+ partner labs</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Personal Treatment Plan</h3>
-                    <p>Your doctor prescribes a customized protocol based on your lab results and health goals.</p>
+                
+                <div class="step-card">
+                    <div class="step-number-badge">2</div>
+                    <div class="step-image">👨‍⚕️</div>
+                    <div class="step-content">
+                        <h3>Online Clinician Visit</h3>
+                        <ul class="step-bullets">
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <span>Private video visit with a TRT expert</span>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <span>Review lab results, symptoms & goals</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="step">
-                <div class="step-number">4</div>
-                <div class="step-content">
-                    <h3>Follow-Up & Optimization</h3>
-                    <p>After 30 days, we test again to track improvements and optimize your dosage for best results.</p>
+                
+                <div class="step-card">
+                    <div class="step-number-badge">3</div>
+                    <div class="step-image">💊</div>
+                    <div class="step-content">
+                        <h3>Get Prescribed</h3>
+                        <ul class="step-bullets">
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <span>Tailored prescriptions if approved</span>
+                            </li>
+                            <li>
+                                <span class="check-icon">✓</span>
+                                <span>Ships free & discreet in 48 hours</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
