@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titan Testosterone Test Kit - $49 | Lab Testing & Online Consultation</title>
-    <meta name="description" content="At-home testosterone test kit with 12+ biomarkers, partner lab access, and online clinician consultation. Normally $149, now $49.">
+    <meta name="description" content="Comprehensive testosterone test kit with 12+ biomarkers, partner lab access, and online clinician consultation. Normally $149, now $49.">
     
     <!-- Product Schema for Google Shopping -->
     <script type="application/ld+json">
@@ -46,46 +46,6 @@
     }
     </script>
     
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "What is included in the $49 test kit?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your purchase includes comprehensive lab testing for 12+ biomarkers (Total Testosterone, Free Testosterone, SHBG, LH, PSA, Hematocrit, and more), access to 2,000+ partner labs nationwide, results within 24-48 hours, and a private video consultation with a licensed clinician to review your results."
-        }
-      }, {
-        "@type": "Question",
-        "name": "How does the testing process work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "After ordering, you'll receive access to visit one of our 2,000+ partner labs for a quick 15-minute blood draw. Your sample is analyzed and results are available in your secure online portal within 24-48 hours. You'll then schedule a video consultation with a licensed clinician to discuss your results."
-        }
-      }, {
-        "@type": "Question",
-        "name": "Is this test confidential?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, all testing is completely confidential. Your results are delivered through a secure online portal and your consultation with the clinician is private. All materials are shipped in discreet packaging."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What happens after I get my results?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "After receiving your lab results, you'll have a private video consultation with a licensed healthcare professional who will review your results with you and discuss next steps. They may recommend lifestyle changes, further testing, or treatment options where medically appropriate."
-        }
-      }]
-    }
-    </script>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💪</text></svg>">
-    
     <style>
         * {
             margin: 0;
@@ -93,40 +53,26 @@
             box-sizing: border-box;
         }
         
-        :root {
-            --titan-blue: #1E3A8A;
-            --titan-blue-dark: #1E293B;
-            --titan-orange: #F97316;
-            --titan-orange-hover: #EA580C;
-            --text-primary: #1F2937;
-            --text-secondary: #6B7280;
-            --bg-light: #F9FAFB;
-            --bg-white: #FFFFFF;
-            --border-color: #E5E7EB;
-        }
-        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            color: #ffffff;
+            background: #000000;
             line-height: 1.6;
-            background: var(--bg-white);
         }
         
         /* Header */
         .header {
-            background: var(--titan-blue-dark);
-            color: white;
-            padding: 1rem 0;
+            background: #000000;
+            padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #1a1a1a;
         }
         
         .header-content {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -134,719 +80,349 @@
         
         .logo {
             font-size: 1.75rem;
-            font-weight: 700;
-            color: white;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #ffffff;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .logo-icon {
-            font-size: 2rem;
         }
         
         .header-cta {
-            display: none;
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .header-cta:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+        
+        /* Announcement Bar */
+        .announcement {
+            background: #f5f5f5;
+            color: #000000;
+            text-align: center;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-            color: white;
-            padding: 3rem 1.5rem;
-            text-align: center;
+            background: linear-gradient(135deg, #c1272d 0%, #8b1a1f 100%);
+            padding: 4rem 2rem;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-text p {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.95;
         }
         
         .hero-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.2);
+            background: #ffffff;
+            color: #c1272d;
             padding: 0.5rem 1rem;
-            border-radius: 999px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .hero h1 {
-            font-size: 2.25rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-        
-        /* What's Included Section */
-        .whats-included {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem auto;
-            max-width: 600px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-        }
-        
-        .whats-included h2 {
-            font-size: 1.75rem;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
+            letter-spacing: 1px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            margin-bottom: 1.5rem;
         }
         
-        .included-item {
-            display: flex;
-            gap: 1.5rem;
-            align-items: start;
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #E5E7EB;
-        }
-        
-        .included-item:last-child {
-            border-bottom: none;
-        }
-        
-        .included-icon {
-            flex-shrink: 0;
-            width: 80px;
-            height: 80px;
-            background: #F3F4F6;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-        
-        .included-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-        
-        .included-content p {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-        
-        .included-badge {
-            display: inline-block;
-            background: #10B981;
-            color: white;
-            padding: 0.375rem 1rem;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-        
-        /* Special Offer Box */
-        .special-offer {
-            background: white;
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            margin: 2rem auto;
-            max-width: 600px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        .hero-image {
             text-align: center;
         }
         
-        .special-offer h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
         }
         
-        .price-comparison {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .price-old {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #9CA3AF;
-            text-decoration: line-through;
-        }
-        
-        .price-new {
-            font-size: 4rem;
-            font-weight: 900;
-            color: #DC2626;
-        }
-        
-        .price-today {
-            font-size: 1.5rem;
-            color: #DC2626;
-            font-weight: 600;
-            margin-left: 0.5rem;
-        }
-        
-        .btn-special {
-            background: linear-gradient(180deg, #DC2626 0%, #991B1B 100%);
-            color: white;
-            font-size: 1.5rem;
-            padding: 1.5rem 3rem;
-            border-radius: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .btn-special:hover {
-            background: linear-gradient(180deg, #991B1B 0%, #7F1D1D 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(220, 38, 38, 0.5);
-        }
-        
-        .btn-arrow {
-            font-size: 1.75rem;
-        }
-        
-        /* CTA Buttons */
-        .btn {
+        .btn-primary {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--titan-orange);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.125rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
-        }
-        
-        .btn:hover {
-            background: var(--titan-orange-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
-        }
-        
-        .btn-large {
+            background: #ffffff;
+            color: #c1272d;
             padding: 1.25rem 3rem;
-            font-size: 1.25rem;
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--titan-blue);
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.9);
-        }
-        
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .trust-icon {
-            font-size: 1.25rem;
-        }
-        
-        /* Product Section */
-        .product-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .product-image {
-            background: var(--bg-light);
-            border-radius: 16px;
-            padding: 3rem;
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-        
-        .product-image-placeholder {
-            font-size: 8rem;
-            color: var(--titan-blue);
-            margin: 2rem 0;
-        }
-        
-        .product-info h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--titan-blue);
-        }
-        
-        .product-info p {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-        
-        .product-features {
-            list-style: none;
-            margin: 2rem 0;
-        }
-        
-        .product-features li {
-            padding: 0.75rem 0;
-            padding-left: 2rem;
-            position: relative;
-            font-size: 1.05rem;
-        }
-        
-        .product-features li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--titan-orange);
+            font-size: 1rem;
             font-weight: 700;
-            font-size: 1.25rem;
-        }
-        
-        /* Drug Facts Box */
-        .drug-facts {
-            background: var(--bg-light);
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 3rem 0;
-            border: 2px solid var(--border-color);
-        }
-        
-        .drug-facts h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--titan-blue);
-        }
-        
-        .drug-facts-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-        
-        .drug-fact {
-            display: flex;
-            justify-content: space-between;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .drug-fact:last-child {
-            border-bottom: none;
-        }
-        
-        .drug-fact-label {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-        
-        .drug-fact-value {
-            color: var(--text-secondary);
-            text-align: right;
-        }
-        
-        /* Benefits Grid */
-        .benefits {
-            background: var(--bg-light);
-            padding: 4rem 1.5rem;
-        }
-        
-        .benefits-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .benefits h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--titan-blue);
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        .benefit-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .benefit-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--titan-blue);
-        }
-        
-        .benefit-card p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        
-        /* How It Works */
-        .how-it-works {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem;
-        }
-        
-        .how-it-works h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--titan-blue);
-        }
-        
-        .steps {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        /* Your Next Steps Section */
-        .next-steps {
-            background: #F3F4F6;
-            padding: 4rem 1.5rem;
-        }
-        
-        .next-steps-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .next-steps h2 {
-            font-size: 3rem;
-            font-weight: 900;
+            text-decoration: none;
+            border-radius: 4px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 3rem;
-            color: var(--text-primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         
-        .steps-grid {
+        .btn-primary:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        
+        /* Features Section */
+        .features {
+            background: #000000;
+            padding: 4rem 2rem;
+        }
+        
+        .features-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
             display: grid;
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
         }
         
-        .step-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            display: flex;
-            gap: 2rem;
-            align-items: start;
-            position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        .feature {
+            text-align: center;
         }
         
-        .step-number-badge {
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-            width: 50px;
-            height: 50px;
-            background: #DC2626;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            font-weight: 900;
-            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
-            z-index: 2;
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
         
-        .step-image {
-            flex-shrink: 0;
-            width: 140px;
-            height: 140px;
-            background: #E5E7EB;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            margin-left: 40px;
-        }
-        
-        .step-content {
-            flex: 1;
-        }
-        
-        .step-content h3 {
-            font-size: 1.75rem;
-            font-weight: 900;
+        .feature h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
         }
         
-        .step-bullets {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .step-bullets li {
-            display: flex;
-            align-items: start;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            font-size: 1.05rem;
+        .feature p {
+            color: #999999;
             line-height: 1.6;
         }
         
-        .step-bullets li:last-child {
-            margin-bottom: 0;
+        /* Process Section */
+        .process {
+            background: #0a0a0a;
+            padding: 4rem 2rem;
         }
         
-        .check-icon {
-            flex-shrink: 0;
-            width: 24px;
-            height: 24px;
-            background: #DC2626;
-            color: white;
+        .process-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .process h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+        
+        .step {
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #c1272d;
+            color: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.875rem;
+            font-size: 1.75rem;
+            font-weight: 900;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .step h3 {
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-top: 0.125rem;
+            margin-bottom: 0.75rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .step p {
+            color: #999999;
+            text-align: center;
+            line-height: 1.6;
         }
         
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
-            color: white;
-            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, #c1272d 0%, #8b1a1f 100%);
+            padding: 4rem 2rem;
             text-align: center;
         }
         
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-section h2 {
+        .cta-content h2 {
             font-size: 2.5rem;
+            font-weight: 900;
             margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .cta-section p {
-            font-size: 1.25rem;
+        .cta-content p {
+            font-size: 1.125rem;
             margin-bottom: 2rem;
             opacity: 0.95;
         }
         
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+        }
+        
+        .price-old {
+            text-decoration: line-through;
+            opacity: 0.6;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        
         /* Footer */
         .footer {
-            background: var(--titan-blue-dark);
-            color: rgba(255,255,255,0.8);
-            padding: 3rem 1.5rem 2rem;
+            background: #000000;
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid #1a1a1a;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-        }
-        
-        .footer-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
         
         .footer-brand h3 {
-            color: white;
             font-size: 1.5rem;
+            font-weight: 900;
             margin-bottom: 1rem;
+            letter-spacing: 2px;
         }
         
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-        }
-        
-        .footer-col h4 {
-            color: white;
-            font-size: 1rem;
+        .footer-links h4 {
+            font-size: 0.875rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
-        .footer-col a {
-            display: block;
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            transition: color 0.2s;
+        .footer-links ul {
+            list-style: none;
         }
         
-        .footer-col a:hover {
-            color: white;
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #999999;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ffffff;
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
             padding-top: 2rem;
-            text-align: center;
-        }
-        
-        .legitscript-badge {
-            display: inline-block;
-            margin: 1rem 0;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
+            border-top: 1px solid #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .footer-legal {
-            font-size: 0.875rem;
+            color: #666666;
+            font-size: 0.75rem;
             line-height: 1.6;
-            margin-top: 1.5rem;
-            color: rgba(255,255,255,0.6);
+        }
+        
+        .legitscript-badge img {
+            height: 60px;
         }
         
         /* Mobile Responsive */
-        @media (max-width: 767px) {
-            .included-item {
-                flex-direction: column;
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
             
-            .included-icon {
-                margin: 0 auto;
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
             
-            .price-comparison {
-                flex-direction: column;
-                gap: 0.5rem;
+            .features-grid,
+            .process-steps {
+                grid-template-columns: 1fr;
             }
             
-            .price-old {
-                font-size: 2rem;
-            }
-            
-            .price-new {
-                font-size: 3rem;
-            }
-            
-            .btn-special {
-                font-size: 1.25rem;
-                padding: 1.25rem 2rem;
-            }
-            
-            .special-offer h2 {
-                font-size: 2rem;
-            }
-            
-            .next-steps h2 {
-                font-size: 2rem;
-            }
-            
-            .step-card {
-                flex-direction: column;
-                padding-top: 4rem;
-            }
-            
-            .step-image {
-                margin-left: 0;
-                margin: 0 auto;
-            }
-            
-            .step-content h3 {
-                font-size: 1.5rem;
+            .footer-content {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
             
-            .step-bullets {
-                text-align: left;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 3.5rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-grid {
-                grid-template-columns: 2fr 1fr;
+            .footer-bottom {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
             }
             
             .header-cta {
-                display: block;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .benefits-grid {
-                grid-template-columns: repeat(4, 1fr);
+                display: none;
             }
         }
     </style>
@@ -855,299 +431,128 @@
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="logo">
-                <span class="logo-icon">💪</span>
-                <span>TITAN</span>
-            </a>
-            <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn header-cta">Get Started →</a>
+            <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="logo">TITAN</a>
+            <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="header-cta">MEMBERS</a>
         </div>
     </header>
-
+    
+    <!-- Announcement Bar -->
+    <div class="announcement">
+        SPECIAL OFFER: $100 Off Labs + Clinician Consultation
+    </div>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">Comprehensive Health Assessment</div>
-            <h1>Titan Testosterone Test Kit</h1>
-            <p class="hero-subtitle">Measure 12+ critical biomarkers with lab testing and private online consultation with a licensed clinician.</p>
-            
-            <!-- What's Included -->
-            <div class="whats-included">
-                <h2>What's Included?</h2>
-                
-                <div class="included-item">
-                    <div class="included-icon">📋</div>
-                    <div class="included-content">
-                        <h3>Comprehensive Lab Testing</h3>
-                        <p>Measures 12+ Critical Biomarkers Including Total Testosterone, Free Testosterone, SHBG, LH, PSA, and Hematocrit</p>
-                        <span class="included-badge">Results in 24-48 hours</span>
-                    </div>
-                </div>
-                
-                <div class="included-item">
-                    <div class="included-icon">👨‍⚕️</div>
-                    <div class="included-content">
-                        <h3>Online Clinician Consultation</h3>
-                        <p>Private Video Call With Licensed Healthcare Professional To Review Your Results</p>
-                    </div>
-                </div>
-                
-                <div class="included-item">
-                    <div class="included-icon">📊</div>
-                    <div class="included-content">
-                        <h3>Personalized Health Assessment</h3>
-                        <p>Receive Professional Guidance Based On Your Lab Results And Health History</p>
-                    </div>
-                </div>
+            <div class="hero-text">
+                <div class="hero-badge">SPECIAL OFFER</div>
+                <h1>Check Your Testosterone Levels</h1>
+                <p>Comprehensive lab testing with 12+ biomarkers, access to 2,000+ partner labs, and private online consultation with a licensed clinician.</p>
+                <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn-primary">Get Started for $49 →</a>
             </div>
-            
-            <!-- Special Offer -->
-            <div class="special-offer">
-                <h2>Special Offer</h2>
-                
-                <div class="price-comparison">
-                    <span class="price-old">$149</span>
-                    <span class="price-new">$49<span class="price-today">Today</span></span>
-                </div>
-                
-                <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn btn-special">
-                    Get Higher T Now <span class="btn-arrow">→</span>
-                </a>
-            </div>
-            
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <span class="trust-icon">✓</span>
-                    <span>Doctor Prescribed</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="trust-icon">✓</span>
-                    <span>Free Shipping</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="trust-icon">✓</span>
-                    <span>Discreet Packaging</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Section -->
-    <section class="product-section">
-        <div class="product-grid">
-            <div class="product-image">
-                <div class="product-image-placeholder">💉</div>
-                <p><strong>Titan Injectable TRT</strong><br>Pharmaceutical-Grade Testosterone</p>
-            </div>
-            
-            <div class="product-info">
-                <h2>Complete Testosterone Assessment</h2>
-                <p>Professional lab testing with convenient at-home sample collection or visit to one of 2,000+ partner labs nationwide.</p>
-                
-                <ul class="product-features">
-                    <li><strong>12+ Biomarkers Tested:</strong> Total Testosterone, Free Testosterone, SHBG, LH, PSA, Hematocrit, and more</li>
-                    <li><strong>Partner Lab Network:</strong> Access to 2,000+ certified labs across the United States</li>
-                    <li><strong>Fast Results:</strong> Receive your lab results within 24-48 hours of sample collection</li>
-                    <li><strong>Licensed Clinician Review:</strong> Private video consultation to discuss your results with a healthcare professional</li>
-                    <li><strong>Confidential Service:</strong> Discreet packaging and secure online portal for results</li>
-                </ul>
-                
-                <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn btn-large">Get Started for $49</a>
-            </div>
-        </div>
-        
-        <!-- Test Kit Details -->
-        <div class="drug-facts">
-            <h3>Test Kit Details</h3>
-            <div class="drug-facts-grid">
-                <div class="drug-fact">
-                    <span class="drug-fact-label">Biomarkers Tested</span>
-                    <span class="drug-fact-value">12+ including Total T, Free T, SHBG, LH, PSA, Hematocrit</span>
-                </div>
-                <div class="drug-fact">
-                    <span class="drug-fact-label">Sample Collection</span>
-                    <span class="drug-fact-value">15-minute visit to partner lab or at-home kit</span>
-                </div>
-                <div class="drug-fact">
-                    <span class="drug-fact-label">Results Timeframe</span>
-                    <span class="drug-fact-value">24-48 hours from sample collection</span>
-                </div>
-                <div class="drug-fact">
-                    <span class="drug-fact-label">Consultation Included</span>
-                    <span class="drug-fact-value">Private video call with licensed clinician</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Test -->
-    <section class="benefits">
-        <div class="benefits-content">
-            <h2>Why Test Your Testosterone?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔬</div>
-                    <h3>Know Your Baseline</h3>
-                    <p>Understand your current hormone levels with comprehensive testing of 12+ critical biomarkers.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">📊</div>
-                    <h3>Professional Analysis</h3>
-                    <p>Licensed clinicians review your results and provide personalized health guidance during your consultation.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏥</div>
-                    <h3>Convenient Testing</h3>
-                    <p>Quick 15-minute visit to one of 2,000+ partner labs nationwide with fast 24-48 hour results.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔒</div>
-                    <h3>Private & Secure</h3>
-                    <p>Confidential service with discreet packaging and secure online portal to access your results.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Your Next Steps -->
-    <section class="next-steps">
-        <div class="next-steps-content">
-            <h2>Your Next Steps</h2>
-            
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number-badge">1</div>
-                    <div class="step-image">💉</div>
-                    <div class="step-content">
-                        <h3>Check Your T Levels</h3>
-                        <ul class="step-bullets">
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span>Easy 15-minute testosterone test</span>
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span>Visit one of 2,000+ partner labs</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number-badge">2</div>
-                    <div class="step-image">👨‍⚕️</div>
-                    <div class="step-content">
-                        <h3>Online Clinician Visit</h3>
-                        <ul class="step-bullets">
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span>Private video visit with a TRT expert</span>
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span>Review lab results, symptoms & goals</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number-badge">3</div>
-                    <div class="step-image">💊</div>
-                    <div class="step-content">
-                        <h3>Get Prescribed</h3>
-                        <ul class="step-bullets">
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span>Tailored prescriptions if approved</span>
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span>Ships free & discreet in 48 hours</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="product-section">
-        <div class="container-narrow">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--titan-blue);">Frequently Asked Questions</h2>
-            
-            <div class="drug-facts">
-                <div style="padding: 1.5rem 0; border-bottom: 1px solid var(--border-color);">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--text-primary);">What is included in the $49 test kit?</h3>
-                    <p style="color: var(--text-secondary); margin: 0;">Your purchase includes comprehensive lab testing for 12+ biomarkers (Total Testosterone, Free Testosterone, SHBG, LH, PSA, Hematocrit, and more), access to 2,000+ partner labs nationwide, results within 24-48 hours, and a private video consultation with a licensed clinician to review your results.</p>
-                </div>
-                
-                <div style="padding: 1.5rem 0; border-bottom: 1px solid var(--border-color);">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--text-primary);">How does the testing process work?</h3>
-                    <p style="color: var(--text-secondary); margin: 0;">After ordering, you'll receive access to visit one of our 2,000+ partner labs for a quick 15-minute blood draw. Your sample is analyzed and results are available in your secure online portal within 24-48 hours. You'll then schedule a video consultation with a licensed clinician to discuss your results.</p>
-                </div>
-                
-                <div style="padding: 1.5rem 0; border-bottom: 1px solid var(--border-color);">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--text-primary);">Is this test confidential?</h3>
-                    <p style="color: var(--text-secondary); margin: 0;">Yes, all testing is completely confidential. Your results are delivered through a secure online portal and your consultation with the clinician is private. All materials are shipped in discreet packaging.</p>
-                </div>
-                
-                <div style="padding: 1.5rem 0;">
-                    <h3 style="font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--text-primary);">What happens after I get my results?</h3>
-                    <p style="color: var(--text-secondary); margin: 0;">After receiving your lab results, you'll have a private video consultation with a licensed healthcare professional who will review your results with you and discuss next steps. They may recommend lifestyle changes, further testing, or treatment options where medically appropriate.</p>
+            <div class="hero-image">
+                <div style="width: 400px; height: 400px; margin: 0 auto; background: rgba(0,0,0,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 6rem;">
+                    💉
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>Ready to Check Your Testosterone Levels?</h2>
-            <p>Get started for just $49, including comprehensive lab testing, clinician consultation, and personalized health assessment.</p>
-            <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn btn-large btn-secondary">Get Started for $49</a>
+    <!-- Features -->
+    <section class="features">
+        <div class="features-content">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🔬</div>
+                    <h3>12+ Biomarkers Tested</h3>
+                    <p>Comprehensive analysis of Total T, Free T, SHBG, LH, PSA, and more</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👨‍⚕️</div>
+                    <h3>Online Consultation</h3>
+                    <p>Private video call with licensed clinician to review your results</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Results</h3>
+                    <p>Get your lab results within 24-48 hours of sample collection</p>
+                </div>
+            </div>
         </div>
     </section>
-
+    
+    <!-- Process -->
+    <section class="process">
+        <div class="process-content">
+            <h2>How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Visit Lab</h3>
+                    <p>15-minute blood draw at one of 2,000+ partner labs nationwide</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get Results</h3>
+                    <p>Receive your lab results in 24-48 hours via secure online portal</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Consult Clinician</h3>
+                    <p>Discuss results with licensed healthcare professional via video call</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Get Started Today</h2>
+            <p>Comprehensive testosterone test kit with clinician consultation</p>
+            <div class="price-tag">
+                <span class="price-old">$149</span>
+                <span>$49</span>
+            </div>
+            <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn-primary">Get Started for $49 →</a>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h3>TITAN</h3>
-                    <p>Scientifically-proven TRT medications. 100% online & clinician-prescribed. Free shipping & discreet packaging.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>Product</h4>
-                        <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop">Injectable TRT</a>
-                        <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop">How It Works</a>
-                        <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop">Pricing</a>
-                    </div>
-                    
-                    <div class="footer-col">
-                        <h4>Support</h4>
-                        <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop">Contact Us</a>
-                        <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop">FAQ</a>
-                    </div>
-                </div>
+            <div class="footer-brand">
+                <h3>TITAN</h3>
+                <p style="color: #666666; font-size: 0.875rem; line-height: 1.6;">©2026 Titan</p>
             </div>
             
-            <div class="footer-bottom">
-                <div class="legitscript-badge">
-                    <img src="legitscript-badge.webp" alt="LegitScript Certified Healthcare Merchant" style="height: 80px;">
-                </div>
-                
-                <div class="footer-legal">
-                    <p><strong>Important Information:</strong> This is a laboratory testing service with optional clinician consultation. Lab testing is for informational purposes only and does not constitute medical advice. Consult with a licensed healthcare provider for diagnosis or treatment decisions. Results may vary based on individual health conditions.</p>
-                    <p style="margin-top: 1rem;"><strong>About Titan:</strong> Titan provides access to laboratory testing services and connects users with board-certified, licensed healthcare professionals for optional consultations. Healthcare professionals may recommend treatment where medically appropriate.</p>
-                    <p style="margin-top: 1rem;"><strong>Price:</strong> $49.00 USD for testosterone test kit including lab testing, results review, and online consultation. Normally $149.00 USD.</p>
-                    <p style="margin-top: 1rem;">&copy; 2026 Titan Health. All rights reserved.</p>
-                </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="https://jointitan.com">Customer Support Center</a></li>
+                    <li><a href="https://jointitan.com">Getting Started Guide</a></li>
+                    <li><a href="https://jointitan.com">Privacy Policy</a></li>
+                    <li><a href="https://jointitan.com">Terms of Service</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:support@jointitan.com">support@jointitan.com</a></li>
+                    <li style="color: #666666; font-size: 0.875rem;">Monday to Sunday<br>8:00 AM - 8:00 PM (ET)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p><strong>Important Information:</strong> This is a laboratory testing service with optional clinician consultation. Lab testing is for informational purposes only and does not constitute medical advice. Consult with a licensed healthcare provider for diagnosis or treatment decisions.</p>
+                <p style="margin-top: 1rem;"><strong>Price:</strong> $49.00 USD for testosterone test kit including lab testing, results review, and online consultation. Normally $149.00 USD.</p>
+            </div>
+            
+            <div class="legitscript-badge">
+                <img src="legitscript-badge.webp" alt="LegitScript Certified">
             </div>
         </div>
     </footer>
