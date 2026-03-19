@@ -255,61 +255,95 @@
         
         /* Process Section */
         .process {
-            background: #0a0a0a;
+            background: #000000;
             padding: 4rem 2rem;
         }
         
         .process-content {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
         }
         
         .process h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
+            font-size: 1.75rem;
+            font-weight: 400;
             text-align: center;
-            margin-bottom: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: #999999;
+            letter-spacing: 0.5px;
+        }
+        
+        .process-subtitle {
+            text-align: center;
+            color: #999999;
+            font-size: 1.125rem;
+            margin-bottom: 4rem;
         }
         
         .process-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
         }
         
         .step {
+            text-align: center;
             position: relative;
         }
         
         .step-number {
-            width: 60px;
-            height: 60px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .step-number-circle {
+            width: 100px;
+            height: 100px;
             background: #c1272d;
-            color: #ffffff;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .step-number-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+            font-family: Arial, sans-serif;
+        }
+        
+        .step-day-label {
             font-size: 1.75rem;
             font-weight: 900;
-            margin: 0 auto 1.5rem;
+            color: #ffffff;
+            margin-top: -2.5rem;
+            margin-bottom: 0.5rem;
+            font-family: Arial, sans-serif;
         }
         
         .step h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            color: #ffffff;
         }
         
         .step p {
             color: #999999;
             text-align: center;
-            line-height: 1.6;
+            line-height: 1.8;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         /* CTA Section */
@@ -427,9 +461,29 @@
                 font-size: 2.5rem;
             }
             
-            .features-grid,
-            .process-steps {
+            .features-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .process h2 {
+                font-size: 1.5rem;
+            }
+            
+            .process-steps {
+                gap: 3rem;
+            }
+            
+            .step-number-circle {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .step-number-text {
+                font-size: 2.25rem;
+            }
+            
+            .step h3 {
+                font-size: 1.25rem;
             }
             
             .footer-content {
@@ -505,21 +559,35 @@
     <!-- Process -->
     <section class="process">
         <div class="process-content">
-            <h2>How Titan Works</h2>
-            <p style="text-align: center; color: #999999; font-size: 1.125rem; margin-bottom: 3rem;">Start testosterone therapy in as little as 5 days</p>
+            <h2>Start testosterone therapy in as little as 5 days</h2>
+            
             <div class="process-steps">
                 <div class="step">
-                    <div class="step-number">Day 1</div>
+                    <div class="step-number">
+                        <div class="step-number-circle">
+                            <div class="step-number-text">Day<br>1</div>
+                        </div>
+                    </div>
                     <h3>Order Your Test Kit</h3>
                     <p>Receive at-home blood collection kit. Choose convenient at-home collection or visit a nearby Quest/Labcorp to test your testosterone and critical biomarkers essential to your well-being and drive.</p>
                 </div>
+                
                 <div class="step">
-                    <div class="step-number">Day 3</div>
+                    <div class="step-number">
+                        <div class="step-number-circle">
+                            <div class="step-number-text">Day<br>3</div>
+                        </div>
+                    </div>
                     <h3>Review Your Results</h3>
                     <p>Once your lab results are in, meet with a licensed clinician online to analyze your results, symptoms, and goals to build a plan tailored to you.</p>
                 </div>
+                
                 <div class="step">
-                    <div class="step-number">Day 5</div>
+                    <div class="step-number">
+                        <div class="step-number-circle">
+                            <div class="step-number-text">Day<br>5</div>
+                        </div>
+                    </div>
                     <h3>Get Your Medication</h3>
                     <p>If prescribed, get access to TRT medications designed to restore your energy, sex drive, and all the other benefits that come with optimized testosterone levels.</p>
                 </div>
