@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Titan TRT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #fafafa;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 100vh;
+        }
+
+        /* Left Side - Form */
+        .checkout-left {
+            background: white;
+            padding: 40px 60px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1E3A8A;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            color: #767676;
+            margin-bottom: 30px;
+        }
+
+        .breadcrumb a {
+            color: #1E3A8A;
+            text-decoration: none;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d9d9d9;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+            background: white;
+            transition: border-color 0.2s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #1E3A8A;
+            box-shadow: 0 0 0 1px #1E3A8A;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: start;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-size: 13px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .payment-icon {
+            width: 40px;
+            height: 26px;
+            border: 1px solid #d9d9d9;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            font-size: 10px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .card-security {
+            display: flex;
+            gap: 15px;
+        }
+
+        .card-security .form-group:first-child {
+            flex: 2;
+        }
+
+        .complete-order-btn {
+            width: 100%;
+            background: #1E3A8A;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .complete-order-btn:hover {
+            background: #152b6b;
+        }
+
+        .secure-notice {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #767676;
+        }
+
+        /* Right Side - Order Summary */
+        .checkout-right {
+            background: #fafafa;
+            padding: 40px 60px;
+            border-left: 1px solid #e5e5e5;
+        }
+
+        .order-summary-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .product-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .product-image {
+            width: 70px;
+            height: 70px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-quantity {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #767676;
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .product-variant {
+            font-size: 12px;
+            color: #767676;
+        }
+
+        .product-price {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .promo-code {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .promo-code input {
+            flex: 1;
+        }
+
+        .promo-code button {
+            background: #f5f5f5;
+            border: 1px solid #d9d9d9;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .promo-code button:hover {
+            background: #e5e5e5;
+        }
+
+        .order-totals {
+            margin-top: 25px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .total-row.shipping {
+            color: #767676;
+        }
+
+        .total-row.total {
+            font-size: 18px;
+            font-weight: 600;
+            padding-top: 15px;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 15px;
+        }
+
+        .free-shipping-badge {
+            background: #10b981;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-right {
+                border-left: none;
+                border-top: 1px solid #e5e5e5;
+                order: -1;
+            }
+
+            .checkout-left,
+            .checkout-right {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <!-- Left Side: Checkout Form -->
+        <div class="checkout-left">
+            <div class="logo">
+                💪 Titan
+            </div>
+
+            <div class="breadcrumb">
+                <a href="index.html">Cart</a> &gt; <a href="#">Information</a> &gt; <span style="color: #333;">Payment</span>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="section">
+                <div class="section-title">Contact information</div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter">
+                    <label for="newsletter">Email me with news and offers</label>
+                </div>
+            </div>
+
+            <!-- Shipping Address -->
+            <div class="section">
+                <div class="section-title">Shipping address</div>
+                
+                <div class="form-group">
+                    <label for="country">Country/Region</label>
+                    <select id="country" required>
+                        <option value="US">United States</option>
+                        <option value="CA">Canada</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First name</label>
+                        <input type="text" id="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last name</label>
+                        <input type="text" id="last-name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="Street address or P.O. Box" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="apartment">Apartment, suite, etc. (optional)</label>
+                    <input type="text" id="apartment">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select id="state" required>
+                            <option value="">Select state</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="CA">California</option>
+                            <option value="FL">Florida</option>
+                            <option value="NY">New York</option>
+                            <option value="TX">Texas</option>
+                            <!-- Add more states as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP code</label>
+                        <input type="text" id="zip" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone (optional)</label>
+                    <input type="tel" id="phone" placeholder="(555) 555-5555">
+                </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="section">
+                <div class="section-title">Payment</div>
+                <p style="font-size: 13px; color: #767676; margin-bottom: 15px;">All transactions are secure and encrypted.</p>
+
+                <div class="payment-icons">
+                    <div class="payment-icon">VISA</div>
+                    <div class="payment-icon">MC</div>
+                    <div class="payment-icon">AMEX</div>
+                    <div class="payment-icon">DISC</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="card-number">Card number</label>
+                    <input type="text" id="card-number" placeholder="1234 1234 1234 1234" maxlength="19" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="card-name">Cardholder name</label>
+                    <input type="text" id="card-name" placeholder="Name on card" required>
+                </div>
+
+                <div class="card-security">
+                    <div class="form-group">
+                        <label for="expiry">Expiration date (MM / YY)</label>
+                        <input type="text" id="expiry" placeholder="MM / YY" maxlength="7" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">Security code</label>
+                        <input type="text" id="cvv" placeholder="CVV" maxlength="4" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Order Button -->
+            <button class="complete-order-btn" onclick="alert('This is a demo checkout page. No payment will be processed.')">
+                Complete Order
+            </button>
+
+            <div class="secure-notice">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 0L1 3V7.5C1 11.64 3.82 15.42 8 16C12.18 15.42 15 11.64 15 7.5V3L8 0Z" fill="#10b981"/>
+                    <path d="M6.5 10.5L4 8L5.06 6.94L6.5 8.38L10.44 4.44L11.5 5.5L6.5 10.5Z" fill="white"/>
+                </svg>
+                <span>Secure checkout powered by Shopify</span>
+            </div>
+        </div>
+
+        <!-- Right Side: Order Summary -->
+        <div class="checkout-right">
+            <div class="order-summary-title">Order summary</div>
+
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="hero-product.webp" alt="Titan TRT Test Kit">
+                    <div class="product-quantity">1</div>
+                </div>
+                <div class="product-details">
+                    <div class="product-name">Titan Testosterone Test Kit</div>
+                    <div class="product-variant">At-Home Blood Test</div>
+                </div>
+                <div class="product-price">$49.00</div>
+            </div>
+
+            <div class="promo-code">
+                <input type="text" placeholder="Discount code">
+                <button>Apply</button>
+            </div>
+
+            <div class="order-totals">
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span>$49.00</span>
+                </div>
+                <div class="total-row shipping">
+                    <span>Shipping</span>
+                    <span><span class="free-shipping-badge">Free</span></span>
+                </div>
+                <div class="total-row total">
+                    <span>Total</span>
+                    <span><span style="font-size: 14px; color: #767676; font-weight: normal;">USD</span> $49.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Basic form validation and formatting
+        document.getElementById('card-number').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+        });
+
+        document.getElementById('expiry').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + ' / ' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+
+        document.getElementById('cvv').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+
+        document.getElementById('zip').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 5);
+        });
+    </script>
+</body>
+</html>
