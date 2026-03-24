@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Titan TRT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: white;
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1E3A8A;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #1E3A8A;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1E3A8A;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .contact-info h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #1E3A8A;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item h3 {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .info-item p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .info-item a {
+            color: #1E3A8A;
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+        }
+
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #1E3A8A;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9d9d9;
+            border-radius: 5px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #1E3A8A;
+        }
+
+        .submit-btn {
+            background: #1E3A8A;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #152b6b;
+        }
+
+        .business-hours {
+            background: white;
+            padding: 30px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .business-hours h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1E3A8A;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 600;
+        }
+
+        .time {
+            color: #666;
+        }
+
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer p {
+            font-size: 13px;
+            color: #999;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">💪 TITAN</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Have questions? We're here to help. Reach out to our team and we'll get back to you within 24 hours.</p>
+
+        <div class="contact-grid">
+            <div>
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:support@titan-trt.com">support@titan-trt.com</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+19085551234">(908) 555-1234</a></p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Business Address</h3>
+                        <p>
+                            SSK Marketing LLC<br>
+                            480 Morris Avenue<br>
+                            Summit, NJ 07901<br>
+                            United States
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Response Time</h3>
+                        <p>We typically respond within 24 hours during business days.</p>
+                    </div>
+                </div>
+
+                <div class="business-hours">
+                    <h2>Business Hours</h2>
+                    <div class="hours-grid">
+                        <div class="hours-item">
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">9:00 AM - 6:00 PM EST</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">10:00 AM - 4:00 PM EST</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form onsubmit="alert('This is a demo form. Messages are not actually sent.'); return false;">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="order">Order Question</option>
+                            <option value="product">Product Information</option>
+                            <option value="shipping">Shipping & Delivery</option>
+                            <option value="returns">Returns & Refunds</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>SSK Marketing LLC</strong></p>
+            <p>480 Morris Avenue, Summit, NJ 07901</p>
+            
+            <div class="footer-links">
+                <a href="refund-policy.html">Refund & Return Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="payment-policy.html">Payment Policy</a>
+                <a href="shipping-policy.html">Shipping & Delivery</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <p>&copy; 2026 SSK Marketing LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
