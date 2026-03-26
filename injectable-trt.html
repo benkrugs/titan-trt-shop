@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Injectable TRT - Testosterone Replacement Therapy | Titan</title>
-    <meta name="description" content="Injectable testosterone replacement therapy prescribed online. Includes free testing, clinician visits, and medication. Forbes Health Best TRT 2025.">
+    <title>Injectable Testosterone - Titan TRT</title>
+    <meta name="description" content="Doctor-designed injectable testosterone therapy. MCT oil formulation for optimal absorption. One-time purchase, 30-day supply.">
     
     <style>
         * {
@@ -14,10 +14,11 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: #FFFFFF;
             color: #1a1a1a;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* Header */
@@ -26,8 +27,8 @@
             padding: 20px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .header-content {
@@ -38,238 +39,161 @@
 
         .logo {
             color: #FFFFFF;
-            font-size: 24px;
-            font-weight: 900;
+            font-size: 22px;
+            font-weight: 700;
             text-decoration: none;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
         }
 
-        /* Breadcrumb */
-        .breadcrumb {
+        /* Hero Section */
+        .hero {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px 24px;
-            font-size: 14px;
-            color: #666;
+            padding: 64px 24px;
         }
 
-        .breadcrumb a {
-            color: #666;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            color: #1a1a1a;
-        }
-
-        .breadcrumb span {
-            margin: 0 8px;
-        }
-
-        /* Product Layout */
-        .product-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        .product-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: start;
         }
 
         @media (min-width: 968px) {
-            .product-container {
-                padding: 40px 24px 80px;
-            }
-            
-            .product-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+            .hero-grid {
+                grid-template-columns: 55% 45%;
                 gap: 80px;
-                flex-direction: initial;
             }
         }
 
-        /* Left Column - Product Image */
-        .product-media {
+        /* Product Image Section */
+        .product-images {
             position: relative;
-            order: 3; /* Mobile: show after header + pricing */
         }
 
-        .forbes-badge {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: white;
-            padding: 12px 16px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            z-index: 10;
-        }
-
-        .forbes-badge img {
-            width: 80px;
-            height: auto;
-        }
-
-        .product-image-main {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-            border-radius: 0;
-            padding: 40px 20px;
-            text-align: center;
-            min-height: 400px;
+        .main-image-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
+            padding: 60px 40px;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 500px;
+            margin-bottom: 16px;
         }
 
-        .product-image-main img {
-            max-width: 100%;
+        .main-image-container img {
+            max-width: 400px;
             width: 100%;
             height: auto;
             object-fit: contain;
         }
 
-        /* Right Column - Product Info */
+        /* Thumbnail Gallery */
+        .thumbnail-gallery {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .thumbnail-gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .thumbnail {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: #0066FF;
+        }
+
+        .thumbnail img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        /* Product Info Section */
         .product-info {
             position: relative;
-            display: flex;
-            flex-direction: column;
         }
 
-        .product-header {
-            order: 1;
-            padding: 24px;
+        .product-badge {
+            display: inline-block;
+            background: #f8f9fa;
+            color: #495057;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
         }
 
-        .product-pricing-cta {
-            order: 2;
-            padding: 0 24px 24px;
+        .product-title {
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #1a1a1a;
         }
 
         .product-description {
-            order: 4;
-            padding: 0 24px 24px;
-        }
-
-        @media (min-width: 968px) {
-            .product-media {
-                order: initial;
-            }
-
-            .product-image-main {
-                border-radius: 16px;
-                padding: 60px 40px;
-                min-height: 500px;
-            }
-
-            .product-image-main img {
-                max-width: 400px;
-            }
-
-            .product-header,
-            .product-pricing-cta,
-            .product-description {
-                order: initial;
-                padding: 0;
-            }
-        }
-
-        .badge {
-            display: inline-block;
-            background: #10b981;
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 24px;
-        }
-
-        .description {
-            font-size: 16px;
-            line-height: 1.7;
-            color: #444;
+            font-size: 17px;
+            line-height: 1.6;
+            color: #495057;
             margin-bottom: 32px;
         }
 
-        /* Pricing Card */
-        .pricing-card {
-            border: 2px solid #e5e5e5;
+        /* Price Section */
+        .price-section {
+            background: #f8f9fa;
             border-radius: 12px;
             padding: 24px;
             margin-bottom: 24px;
         }
 
-        .pricing-header {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .price-row {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
+        .price-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c757d;
             margin-bottom: 8px;
         }
 
-        .price-label {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .price-wrapper {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
-
-        .price-old {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 18px;
-        }
-
-        .price-current {
-            color: #dc2626;
-            font-size: 32px;
+        .price {
+            font-size: 48px;
             font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1;
         }
 
         .price-note {
-            font-size: 13px;
-            color: #666;
+            font-size: 14px;
+            color: #6c757d;
             margin-top: 8px;
-        }
-
-        .refund-note {
-            font-size: 13px;
-            color: #666;
-            font-style: italic;
-            margin-top: 12px;
         }
 
         /* CTA Button */
         .cta-primary {
             display: block;
+            width: 100%;
             background: #0066FF;
             color: white;
             text-decoration: none;
@@ -280,6 +204,8 @@
             text-align: center;
             transition: background 0.3s;
             margin-bottom: 24px;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-primary:hover {
@@ -292,7 +218,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
             padding: 24px 0;
-            border-top: 1px solid #e5e5e5;
+            border-top: 1px solid #e9ecef;
         }
 
         .trust-badge {
@@ -300,232 +226,231 @@
         }
 
         .trust-badge-icon {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 8px;
         }
 
         .trust-badge-text {
-            font-size: 12px;
-            color: #666;
+            font-size: 13px;
+            color: #6c757d;
             line-height: 1.4;
+            font-weight: 500;
         }
 
-        /* Features Section */
-        .features {
-            background: #fafafa;
+        /* Mobile Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 16px 24px;
+            box-shadow: 0 -2px 16px rgba(0,0,0,0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        .sticky-cta.visible {
+            display: block;
+        }
+
+        /* Results Section */
+        .results-section {
+            background: #f8f9fa;
             padding: 80px 24px;
         }
 
-        .features-container {
+        .results-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .section-subtitle {
+            font-size: 17px;
+            color: #6c757d;
             text-align: center;
             margin-bottom: 48px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 32px;
-        }
-
-        @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .feature {
-            background: white;
-            padding: 32px 24px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-
-        .feature h3 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .feature p {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* Timeline Section */
-        .timeline-section {
-            padding: 80px 24px;
-            background: #fff;
-        }
-
-        .timeline-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .timeline-section h2 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .timeline-section .subtitle {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 48px;
-            max-width: 700px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .timeline-image {
-            margin: 48px auto;
+        /* Results Chart */
+        .results-chart {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 48px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.05);
         }
 
-        .timeline-image svg {
+        .chart-container {
+            position: relative;
             width: 100%;
             max-width: 800px;
+            margin: 0 auto;
         }
 
-        .disclaimer {
-            font-size: 13px;
-            color: #999;
-            margin-top: 24px;
-            font-style: italic;
+        .chart-container svg {
+            width: 100%;
+            height: auto;
         }
 
-        /* Steps Section */
-        .steps {
-            background: #fafafa;
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat {
+            padding: 24px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0066FF;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6c757d;
+            font-weight: 500;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 24px;
+            background: white;
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media (min-width: 968px) {
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+        }
+
+        .benefit {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 64px;
+            height: 64px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: 0 auto 24px;
+        }
+
+        .benefit-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .benefit-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #6c757d;
+        }
+
+        /* What's Included Section */
+        .included-section {
+            background: #f8f9fa;
             padding: 80px 24px;
         }
 
-        .steps-container {
+        .included-container {
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .step {
-            background: white;
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 24px;
+        .included-list {
             display: grid;
-            grid-template-columns: auto 1fr;
+            grid-template-columns: 1fr;
             gap: 24px;
-            align-items: start;
         }
 
-        .step-number {
+        .included-item {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: start;
+            gap: 16px;
+        }
+
+        .included-icon {
             width: 48px;
             height: 48px;
-            background: #dc2626;
-            color: white;
-            border-radius: 50%;
+            background: #e7f3ff;
+            border-radius: 8px;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 20px;
-            font-weight: 900;
-            flex-shrink: 0;
         }
 
-        .step-content h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .step-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .step-content ul li {
-            padding: 6px 0 6px 24px;
-            position: relative;
-            color: #444;
-            font-size: 15px;
-        }
-
-        .step-content ul li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: 900;
-        }
-
-        /* Guarantee Section */
-        .guarantee {
-            background: #1a1a1a;
-            color: white;
-            padding: 48px 24px;
-            text-align: center;
-        }
-
-        .guarantee-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .guarantee-badge {
-            display: inline-flex;
-            width: 80px;
-            height: 80px;
-            background: #FFD700;
+        .included-content h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 6px;
             color: #1a1a1a;
-            border-radius: 50%;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 22px;
-            line-height: 1.2;
-            margin-bottom: 24px;
         }
 
-        .guarantee-badge small {
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-        .guarantee h2 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .guarantee p {
-            font-size: 16px;
-            color: #ccc;
+        .included-content p {
+            font-size: 15px;
+            color: #6c757d;
             line-height: 1.6;
         }
 
         /* Footer */
         footer {
-            background: #f5f5f5;
+            background: #1a1a1a;
+            color: #adb5bd;
             padding: 48px 24px;
             text-align: center;
         }
 
         footer p {
             font-size: 14px;
-            color: #666;
             margin-bottom: 16px;
         }
 
@@ -538,29 +463,32 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
+        /* Mobile Adjustments */
+        @media (max-width: 767px) {
+            .hero {
+                padding: 32px 24px;
             }
 
-            .breadcrumb {
-                padding: 12px 24px;
-                font-size: 13px;
+            .product-title {
+                font-size: 32px;
             }
 
-            .product-image-main {
-                min-height: 350px;
-                padding: 30px 20px;
+            .price {
+                font-size: 40px;
             }
 
             .trust-badges {
                 grid-template-columns: 1fr;
-                gap: 20px;
+                gap: 16px;
             }
 
-            .step {
-                grid-template-columns: 1fr;
-                gap: 16px;
+            .section-title {
+                font-size: 28px;
+            }
+
+            .main-image-container {
+                min-height: 400px;
+                padding: 40px 20px;
             }
         }
     </style>
@@ -573,224 +501,222 @@
         </div>
     </header>
 
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>></span>
-        <a href="#">Protocols</a>
-        <span>></span>
-        <a href="#">Testosterone</a>
-        <span>></span>
-        <strong>Injectable TRT</strong>
-    </nav>
-
-    <!-- Product Section -->
-    <main class="product-container">
-        <div class="product-grid">
-            <!-- Left: Product Image -->
-            <div class="product-media">
-                <div class="forbes-badge">
-                    <svg viewBox="0 0 150 100" style="width: 80px;">
-                        <text x="75" y="25" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="bold">Forbes</text>
-                        <text x="75" y="42" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">HEALTH</text>
-                        <rect x="45" y="50" width="60" height="30" fill="#dc2626" rx="3"/>
-                        <text x="75" y="63" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="white">BEST OF 2025</text>
-                        <text x="75" y="75" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="white">BEST TRT</text>
-                    </svg>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid">
+            <!-- Product Images -->
+            <div class="product-images">
+                <div class="main-image-container">
+                    <img src="product-main.jpg" alt="Injectable Testosterone TRT" id="mainImage">
                 </div>
                 
-                <div class="product-image-main">
-                    <img src="injectable-trt-product.jpg" alt="Injectable TRT Vial">
+                <div class="thumbnail-gallery">
+                    <div class="thumbnail active">
+                        <img src="product-main.jpg" alt="Main view">
+                    </div>
+                    <div class="thumbnail">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <rect x="5" y="10" width="40" height="30" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+                            <text x="25" y="30" text-anchor="middle" fill="#6c757d" font-size="12">Info</text>
+                        </svg>
+                    </div>
+                    <div class="thumbnail">
+                        <svg width="50" height="50" viewBox="0 0 50 50">
+                            <circle cx="25" cy="25" r="15" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+                            <text x="25" y="30" text-anchor="middle" fill="#6c757d" font-size="12">📋</text>
+                        </svg>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right: Product Info -->
+            <!-- Product Info -->
             <div class="product-info">
-                <!-- Header (Mobile: order 1) -->
-                <div class="product-header">
-                    <span class="badge">Most Effective</span>
-                    <h1>Injectable TRT</h1>
-                    <p class="subtitle">Testosterone Replacement Therapy</p>
+                <span class="product-badge">Male TRT</span>
+                
+                <h1 class="product-title">Injectable Testosterone</h1>
+                
+                <p class="product-description">
+                    Doctor-designed testosterone replacement therapy formulated with pharmaceutical-grade MCT oil for optimal absorption. Convenient at-home injections restore testosterone to physiologic levels—no office visits required.
+                </p>
+
+                <!-- Price -->
+                <div class="price-section">
+                    <div class="price-label">30-Day Supply</div>
+                    <div class="price">$159</div>
+                    <p class="price-note">*Fully refundable if not approved for medication</p>
                 </div>
 
-                <!-- Pricing + CTA (Mobile: order 2) -->
-                <div class="product-pricing-cta">
-                    <!-- Pricing -->
-                    <div class="pricing-card">
-                        <div class="pricing-header">30 Day Supply</div>
-                        <div class="price-row">
-                            <div class="price-label">One-time purchase</div>
-                            <div class="price-wrapper">
-                                <span class="price-old">$259</span>
-                                <span class="price-current">$159</span>
-                            </div>
-                        </div>
-                        <div class="refund-note">*Fully refundable if you are not approved for medication</div>
+                <!-- CTA -->
+                <button class="cta-primary" onclick="window.location.href='#'">Shop Now</button>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">📦</div>
+                        <div class="trust-badge-text">Free Priority Shipping</div>
                     </div>
-
-                    <!-- CTA -->
-                    <a href="#" class="cta-primary">Get Started Now</a>
-
-                    <!-- Trust Badges -->
-                    <div class="trust-badges">
-                        <div class="trust-badge">
-                            <div class="trust-badge-icon">📦</div>
-                            <div class="trust-badge-text">Free priority shipping</div>
-                        </div>
-                        <div class="trust-badge">
-                            <div class="trust-badge-icon">📅</div>
-                            <div class="trust-badge-text">Access to doctor in 48h</div>
-                        </div>
-                        <div class="trust-badge">
-                            <div class="trust-badge-icon">🛡️</div>
-                            <div class="trust-badge-text">Money-back guarantee</div>
-                        </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">👨‍⚕️</div>
+                        <div class="trust-badge-text">Doctor Access in 48h</div>
                     </div>
-                </div>
-
-                <!-- Description (Mobile: order 4, after image) -->
-                <div class="product-description">
-                    <div class="description">
-                        Boost energy, mood, libido, and muscle mass with our most powerful TRT Protocol. Convenient injections from home will raise both total and free testosterone—no office visits required. Doctor designed and formulated with MCT oil for best-in-class absorption. Feel the difference, quality matters.
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">✓</div>
+                        <div class="trust-badge-text">Money-Back Guarantee</div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Features -->
-    <section class="features">
-        <div class="features-container">
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="results-container">
+            <h2 class="section-title">Real Results</h2>
+            <p class="section-subtitle">Clinical studies show significant testosterone increases within 6 months of treatment</p>
+
+            <!-- Results Chart -->
+            <div class="results-chart">
+                <div class="chart-container">
+                    <svg viewBox="0 0 700 350">
+                        <!-- Background grid lines -->
+                        <line x1="80" y1="280" x2="620" y2="280" stroke="#e9ecef" stroke-width="2"/>
+                        <line x1="80" y1="210" x2="620" y2="210" stroke="#e9ecef" stroke-width="1" stroke-dasharray="4,4"/>
+                        <line x1="80" y1="140" x2="620" y2="140" stroke="#e9ecef" stroke-width="1" stroke-dasharray="4,4"/>
+                        <line x1="80" y1="70" x2="620" y2="70" stroke="#e9ecef" stroke-width="1" stroke-dasharray="4,4"/>
+                        
+                        <!-- Y-axis labels -->
+                        <text x="60" y="285" text-anchor="end" fill="#6c757d" font-size="12">300</text>
+                        <text x="60" y="215" text-anchor="end" fill="#6c757d" font-size="12">600</text>
+                        <text x="60" y="145" text-anchor="end" fill="#6c757d" font-size="12">900</text>
+                        <text x="60" y="75" text-anchor="end" fill="#6c757d" font-size="12">1200</text>
+                        
+                        <!-- Gradient area under curve -->
+                        <defs>
+                            <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0066FF;stop-opacity:0.1" />
+                                <stop offset="100%" style="stop-color:#0066FF;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Area fill -->
+                        <path d="M 80 280 L 80 240 L 200 180 L 320 130 L 440 90 L 560 70 L 620 65 L 620 280 Z" fill="url(#chartGrad)"/>
+                        
+                        <!-- Main line -->
+                        <path d="M 80 240 L 200 180 L 320 130 L 440 90 L 560 70 L 620 65" stroke="#0066FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        
+                        <!-- Data points -->
+                        <circle cx="80" cy="240" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
+                        <circle cx="200" cy="180" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
+                        <circle cx="320" cy="130" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
+                        <circle cx="440" cy="90" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
+                        <circle cx="560" cy="70" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
+                        
+                        <!-- Highlight final point -->
+                        <circle cx="620" cy="65" r="8" fill="#0066FF"/>
+                        <circle cx="620" cy="65" r="14" fill="none" stroke="#0066FF" stroke-width="2" opacity="0.3"/>
+                        
+                        <!-- Value label at peak -->
+                        <rect x="580" y="20" width="70" height="30" fill="white" rx="4" stroke="#e9ecef" stroke-width="1"/>
+                        <text x="615" y="40" text-anchor="middle" fill="#1a1a1a" font-size="14" font-weight="600">1084</text>
+                        
+                        <!-- Small avatar circle -->
+                        <circle cx="595" cy="65" r="18" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+                        <text x="595" y="72" text-anchor="middle" font-size="20">👤</text>
+                        
+                        <!-- X-axis labels -->
+                        <text x="80" y="305" text-anchor="middle" fill="#6c757d" font-size="13">Mar</text>
+                        <text x="200" y="305" text-anchor="middle" fill="#6c757d" font-size="13">Apr</text>
+                        <text x="320" y="305" text-anchor="middle" fill="#6c757d" font-size="13">May</text>
+                        <text x="440" y="305" text-anchor="middle" fill="#6c757d" font-size="13">Jun</text>
+                        <text x="560" y="305" text-anchor="middle" fill="#6c757d" font-size="13">Jul</text>
+                        <text x="620" y="305" text-anchor="middle" fill="#6c757d" font-size="13" font-weight="600">Aug</text>
+                        
+                        <!-- Y-axis title -->
+                        <text x="30" y="180" text-anchor="middle" fill="#6c757d" font-size="12" transform="rotate(-90 30 180)">Total Testosterone (ng/dL)</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-number">12,000+</div>
+                    <div class="stat-label">Patients Treated</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4.9 ★★★★★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="benefits-container">
+            <h2 class="section-title">Clinical Benefits</h2>
+            <p class="section-subtitle">Restore optimal testosterone levels and experience comprehensive health improvements</p>
+
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Restore Energy, Mood & Libido</h3>
+                    <p class="benefit-text">Improves energy, libido, and vitality by restoring testosterone to optimal physiologic levels.</p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">💪</div>
+                    <h3 class="benefit-title">Build Muscle & Improve Body Composition</h3>
+                    <p class="benefit-text">Supports lean muscle mass, strength, bone density, and healthier fat distribution.</p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">🧠</div>
+                    <h3 class="benefit-title">Support Metabolic & Cognitive Health</h3>
+                    <p class="benefit-text">Helps improve insulin sensitivity, focus, mood stability, and long-term metabolic health.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included-section">
+        <div class="included-container">
             <h2 class="section-title">Everything Included</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">🧪</div>
-                    <h3>Free Testosterone Tests</h3>
-                    <p>Quarterly Labs Measuring 12+ Critical Biomarkers For Low T</p>
+            <p class="section-subtitle">Treatment plans include comprehensive care and ongoing support</p>
+
+            <div class="included-list">
+                <div class="included-item">
+                    <div class="included-icon">🧪</div>
+                    <div class="included-content">
+                        <h3>Free Testosterone Testing</h3>
+                        <p>Quarterly labs measuring 12+ critical biomarkers for comprehensive monitoring</p>
+                    </div>
                 </div>
 
-                <div class="feature">
-                    <div class="feature-icon">👨‍⚕️</div>
-                    <h3>Unlimited Clinician Consults</h3>
-                    <p>Private Video Calls To Review Results & Treatments</p>
+                <div class="included-item">
+                    <div class="included-icon">👨‍⚕️</div>
+                    <div class="included-content">
+                        <h3>Unlimited Clinician Consults</h3>
+                        <p>Private video calls with TRT specialists to review results and optimize treatment</p>
+                    </div>
                 </div>
 
-                <div class="feature">
-                    <div class="feature-icon">💊</div>
-                    <h3>Personalized Treatment Plan</h3>
-                    <p>Tailored Prescriptions Based On Your Needs And Goals (Free Anastrozole Included)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline -->
-    <section class="timeline-section">
-        <div class="timeline-container">
-            <h2>The Last Solution You Need To Feel Like A Man Again</h2>
-            <p class="subtitle">With TRT, we expect you to reach peak energy, strength, and masculine drive within 6 months</p>
-
-            <div class="timeline-image">
-                <svg viewBox="0 0 700 350" style="width: 100%; max-width: 700px;">
-                    <!-- Background gradient -->
-                    <defs>
-                        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#ffccd5;stop-opacity:0.3" />
-                            <stop offset="100%" style="stop-color:#ffccd5;stop-opacity:0.7" />
-                        </linearGradient>
-                    </defs>
-                    
-                    <!-- Area under curve -->
-                    <path d="M 80 300 L 80 260 Q 250 210, 350 160 Q 500 110, 620 60 L 620 300 Z" fill="url(#grad)"/>
-                    
-                    <!-- Main line -->
-                    <path d="M 80 260 Q 250 210, 350 160 Q 500 110, 620 60" stroke="#dc2626" stroke-width="4" fill="none"/>
-                    
-                    <!-- LOW T -->
-                    <ellipse cx="120" cy="245" rx="50" ry="22" fill="#999"/>
-                    <text x="120" y="252" text-anchor="middle" font-family="Arial" font-size="16" font-weight="900" fill="white">LOW T</text>
-                    
-                    <!-- NORMAL T -->
-                    <ellipse cx="350" cy="145" rx="65" ry="22" fill="#f97316"/>
-                    <text x="350" y="152" text-anchor="middle" font-family="Arial" font-size="16" font-weight="900" fill="white">NORMAL T</text>
-                    
-                    <!-- HIGH T -->
-                    <ellipse cx="570" cy="60" rx="65" ry="26" fill="#dc2626"/>
-                    <text x="570" y="67" text-anchor="middle" font-family="Arial" font-size="18" font-weight="900" fill="white">HIGH T</text>
-                    
-                    <!-- WITH TITAN -->
-                    <text x="570" y="100" text-anchor="middle" font-family="Arial" font-size="14" font-weight="900" fill="#dc2626">WITH TITAN</text>
-                    
-                    <!-- Vertical dashed lines -->
-                    <line x1="120" y1="270" x2="120" y2="300" stroke="#999" stroke-width="2" stroke-dasharray="4,4"/>
-                    <line x1="350" y1="170" x2="350" y2="300" stroke="#f97316" stroke-width="2" stroke-dasharray="4,4"/>
-                    <line x1="570" y1="90" x2="570" y2="300" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,4"/>
-                    
-                    <!-- Labels -->
-                    <text x="120" y="325" text-anchor="middle" font-family="Arial" font-size="15" font-weight="600">Today</text>
-                    <text x="350" y="325" text-anchor="middle" font-family="Arial" font-size="15" font-weight="600">3 Months</text>
-                    
-                    <ellipse cx="570" cy="318" rx="55" ry="18" fill="#dc2626"/>
-                    <text x="570" y="324" text-anchor="middle" font-family="Arial" font-size="13" font-weight="900" fill="white">6 Months</text>
-                </svg>
-            </div>
-
-            <p class="disclaimer">Timeline reflects testosterone level changes observed in clinical studies, where men on TRT increased total testosterone by 130%+ within 6 months.</p>
-        </div>
-    </section>
-
-    <!-- Steps -->
-    <section class="steps">
-        <div class="steps-container">
-            <h2 class="section-title">Your Next Steps</h2>
-
-            <div class="step">
-                <div class="step-number">1</div>
-                <div class="step-content">
-                    <h3>Check Your T Levels</h3>
-                    <ul>
-                        <li>Easy at-home or in-person test</li>
-                        <li>Identifies the root cause of low T</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-number">2</div>
-                <div class="step-content">
-                    <h3>Online Clinician Visit</h3>
-                    <ul>
-                        <li>Private video visit with a TRT expert</li>
-                        <li>Review lab results, symptoms & goals</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="step">
-                <div class="step-number">3</div>
-                <div class="step-content">
-                    <h3>Get Your Prescription</h3>
-                    <ul>
-                        <li>Tailored prescriptions if approved</li>
-                        <li>Ships free & discreet in 48 hours</li>
-                    </ul>
+                <div class="included-item">
+                    <div class="included-icon">💊</div>
+                    <div class="included-content">
+                        <h3>Personalized Treatment Plan</h3>
+                        <p>Tailored prescriptions based on your needs and goals (free Anastrozole included)</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Guarantee -->
-    <section class="guarantee">
-        <div class="guarantee-content">
-            <div class="guarantee-badge">
-                <div>90</div>
-                <small>DAY</small>
-            </div>
-            <h2>100% Money Back Guarantee</h2>
-            <p>Zero risk: if your clinician determines you're not eligible you'll get fully refunded</p>
-            <p style="margin-top: 24px; font-weight: 600; color: white;">Treatment plans include free testosterone tests, clinician visits, and medication — all in one. No hidden fees.</p>
-        </div>
-    </section>
+    <!-- Mobile Sticky CTA -->
+    <div class="sticky-cta" id="stickyCTA">
+        <button class="cta-primary" onclick="window.location.href='#'">Shop Now - $159</button>
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -807,5 +733,34 @@
             <a href="refund-policy.html">Refund Policy</a>
         </p>
     </footer>
+
+    <script>
+        // Mobile sticky CTA
+        const stickyCTA = document.getElementById('stickyCTA');
+        const hero = document.querySelector('.hero');
+        
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth < 768) {
+                const heroBottom = hero.offsetTop + hero.offsetHeight;
+                if (window.scrollY > heroBottom) {
+                    stickyCTA.classList.add('visible');
+                } else {
+                    stickyCTA.classList.remove('visible');
+                }
+            }
+        });
+
+        // Thumbnail gallery (basic implementation)
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                // In production, you'd switch images here
+            });
+        });
+    </script>
 </body>
 </html>
