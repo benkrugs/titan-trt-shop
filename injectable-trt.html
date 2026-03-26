@@ -47,13 +47,12 @@
 
         /* Hero Section */
         .hero {
-            display: grid;
-            grid-template-columns: 1fr;
+            width: 100%;
         }
 
         @media (min-width: 968px) {
             .hero {
-                grid-template-columns: 1fr 1fr;
+                display: flex;
                 max-width: 1400px;
                 margin: 0 auto;
                 gap: 64px;
@@ -66,7 +65,13 @@
             width: 100%;
             height: auto;
             display: block;
-            background: none;
+        }
+
+        @media (min-width: 968px) {
+            .product-image {
+                width: 50%;
+                flex-shrink: 0;
+            }
         }
 
         /* Product Info */
@@ -76,6 +81,7 @@
 
         @media (min-width: 968px) {
             .product-info {
+                width: 50%;
                 padding: 0;
             }
         }
