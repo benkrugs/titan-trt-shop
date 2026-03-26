@@ -47,40 +47,28 @@
 
         /* Hero Section */
         .hero {
+            display: grid;
+            grid-template-columns: 1fr;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            align-items: start;
-        }
-
         @media (min-width: 968px) {
-            .hero-grid {
+            .hero {
                 grid-template-columns: 1fr 1fr;
-                gap: 64px;
-                padding: 64px 24px;
+                gap: 48px;
+                padding: 48px 24px;
             }
         }
 
-        /* Product Image Section */
+        /* Product Image */
         .product-image {
             width: 100%;
             height: auto;
             display: block;
-            margin: 0;
-            padding: 0;
         }
 
-        @media (min-width: 968px) {
-            .product-image {
-                border-radius: 12px;
-            }
-        }
-
+        /* Product Info */
         .product-info {
             padding: 24px;
         }
@@ -507,10 +495,6 @@
 
         /* Mobile Adjustments */
         @media (max-width: 767px) {
-            .hero-grid {
-                gap: 24px;
-            }
-
             .trust-badges {
                 grid-template-columns: 1fr;
                 gap: 12px;
@@ -543,12 +527,11 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-grid">
-            <!-- Product Image -->
-            <img src="product-main.jpg" alt="Injectable Testosterone TRT" class="product-image">
+        <!-- Product Image -->
+        <img src="product-main.jpg" alt="Injectable Testosterone TRT" class="product-image">
 
-            <!-- Product Info -->
-            <div class="product-info">
+        <!-- Product Info -->
+        <div class="product-info">
                 <span class="product-badge">Male TRT</span>
                 
                 <h1 class="product-title">Injectable Testosterone</h1>
@@ -628,7 +611,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Results Section -->
