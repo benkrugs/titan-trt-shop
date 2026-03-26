@@ -49,20 +49,24 @@
         .hero {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 64px 24px;
+            padding: 48px 24px;
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 48px;
+            gap: 40px;
             align-items: start;
         }
 
         @media (min-width: 968px) {
+            .hero {
+                padding: 64px 24px;
+            }
+            
             .hero-grid {
                 grid-template-columns: 55% 45%;
-                gap: 80px;
+                gap: 64px;
             }
         }
 
@@ -71,22 +75,53 @@
             position: relative;
         }
 
+        .forbes-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 10;
+            font-size: 11px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
         .main-image-container {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 16px;
-            padding: 60px 40px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 500px;
-            margin-bottom: 16px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
         }
 
         .main-image-container img {
-            max-width: 400px;
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: contain;
+            padding: 32px;
+        }
+
+        @media (max-width: 767px) {
+            .main-image-container {
+                aspect-ratio: 4 / 3;
+                border-radius: 0;
+            }
+            
+            .main-image-container img {
+                padding: 24px;
+            }
+            
+            .forbes-badge {
+                top: 12px;
+                left: 12px;
+                padding: 6px 10px;
+                font-size: 10px;
+            }
         }
 
         /* Thumbnail Gallery */
@@ -96,6 +131,7 @@
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
+            margin-top: 12px;
         }
 
         .thumbnail-gallery::-webkit-scrollbar {
@@ -104,8 +140,8 @@
 
         .thumbnail {
             flex-shrink: 0;
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: #f8f9fa;
             border: 2px solid #e9ecef;
             border-radius: 8px;
@@ -119,12 +155,6 @@
         .thumbnail:hover,
         .thumbnail.active {
             border-color: #0066FF;
-        }
-
-        .thumbnail img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
         }
 
         /* Product Info Section */
@@ -142,30 +172,36 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .product-title {
-            font-size: 42px;
+            font-size: 36px;
             font-weight: 600;
             line-height: 1.2;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             color: #1a1a1a;
         }
 
+        @media (min-width: 968px) {
+            .product-title {
+                font-size: 42px;
+            }
+        }
+
         .product-description {
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.6;
             color: #495057;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         /* Price Section */
         .price-section {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
         .price-label {
@@ -174,20 +210,60 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: #6c757d;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .price {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
             color: #1a1a1a;
             line-height: 1;
+            margin-bottom: 8px;
         }
 
         .price-note {
-            font-size: 14px;
+            font-size: 13px;
             color: #6c757d;
-            margin-top: 8px;
+        }
+
+        /* Included Checklist (in buy box) */
+        .included-checklist {
+            margin-bottom: 20px;
+        }
+
+        .included-item-compact {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .included-item-compact:last-child {
+            margin-bottom: 0;
+        }
+
+        .check-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+        }
+
+        .included-item-compact-text {
+            flex: 1;
+        }
+
+        .included-item-compact-text strong {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            display: block;
+        }
+
+        .included-item-compact-text span {
+            font-size: 13px;
+            color: #6c757d;
+            line-height: 1.4;
         }
 
         /* CTA Button */
@@ -197,13 +273,13 @@
             background: #0066FF;
             color: white;
             text-decoration: none;
-            padding: 18px 32px;
+            padding: 16px 32px;
             border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
             text-align: center;
             transition: background 0.3s;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             border: none;
             cursor: pointer;
         }
@@ -216,8 +292,8 @@
         .trust-badges {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            padding: 24px 0;
+            gap: 12px;
+            padding: 20px 0 0;
             border-top: 1px solid #e9ecef;
         }
 
@@ -226,14 +302,15 @@
         }
 
         .trust-badge-icon {
-            font-size: 20px;
-            margin-bottom: 8px;
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 8px;
         }
 
         .trust-badge-text {
-            font-size: 13px;
+            font-size: 12px;
             color: #6c757d;
-            line-height: 1.4;
+            line-height: 1.3;
             font-weight: 500;
         }
 
@@ -244,7 +321,7 @@
             left: 0;
             right: 0;
             background: white;
-            padding: 16px 24px;
+            padding: 12px 20px;
             box-shadow: 0 -2px 16px rgba(0,0,0,0.1);
             z-index: 999;
             display: none;
@@ -254,10 +331,20 @@
             display: block;
         }
 
+        .sticky-cta .cta-primary {
+            margin-bottom: 0;
+        }
+
         /* Results Section */
         .results-section {
             background: #f8f9fa;
-            padding: 80px 24px;
+            padding: 64px 24px;
+        }
+
+        @media (min-width: 968px) {
+            .results-section {
+                padding: 80px 24px;
+            }
         }
 
         .results-container {
@@ -266,18 +353,24 @@
         }
 
         .section-title {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 600;
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             color: #1a1a1a;
         }
 
+        @media (min-width: 968px) {
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
         .section-subtitle {
-            font-size: 17px;
+            font-size: 16px;
             color: #6c757d;
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 40px;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -287,9 +380,15 @@
         .results-chart {
             background: white;
             border-radius: 16px;
-            padding: 40px;
-            margin-bottom: 48px;
+            padding: 32px 20px;
+            margin-bottom: 40px;
             box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+        }
+
+        @media (min-width: 768px) {
+            .results-chart {
+                padding: 40px;
+            }
         }
 
         .chart-container {
@@ -297,10 +396,12 @@
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
+            overflow-x: auto;
         }
 
         .chart-container svg {
             width: 100%;
+            min-width: 600px;
             height: auto;
         }
 
@@ -308,7 +409,7 @@
         .stats-bar {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 24px;
             text-align: center;
         }
 
@@ -325,10 +426,10 @@
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 700;
             color: #0066FF;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .stat-label {
@@ -339,8 +440,14 @@
 
         /* Benefits Section */
         .benefits-section {
-            padding: 80px 24px;
+            padding: 64px 24px;
             background: white;
+        }
+
+        @media (min-width: 968px) {
+            .benefits-section {
+                padding: 80px 24px;
+            }
         }
 
         .benefits-container {
@@ -351,7 +458,7 @@
         .benefits-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 48px;
+            gap: 40px;
         }
 
         @media (min-width: 968px) {
@@ -366,21 +473,21 @@
         }
 
         .benefit-icon {
-            width: 64px;
-            height: 64px;
+            width: 56px;
+            height: 56px;
             background: #f8f9fa;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
-            margin: 0 auto 24px;
+            font-size: 24px;
+            margin: 0 auto 20px;
         }
 
         .benefit-title {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #1a1a1a;
         }
 
@@ -390,10 +497,16 @@
             color: #6c757d;
         }
 
-        /* What's Included Section */
+        /* What's Included Section (full version) */
         .included-section {
             background: #f8f9fa;
-            padding: 80px 24px;
+            padding: 64px 24px;
+        }
+
+        @media (min-width: 968px) {
+            .included-section {
+                padding: 80px 24px;
+            }
         }
 
         .included-container {
@@ -404,12 +517,12 @@
         .included-list {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 24px;
+            gap: 20px;
         }
 
         .included-item {
             background: white;
-            padding: 24px;
+            padding: 20px;
             border-radius: 12px;
             display: flex;
             align-items: start;
@@ -417,8 +530,8 @@
         }
 
         .included-icon {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             background: #e7f3ff;
             border-radius: 8px;
             flex-shrink: 0;
@@ -429,29 +542,29 @@
         }
 
         .included-content h3 {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
             color: #1a1a1a;
         }
 
         .included-content p {
-            font-size: 15px;
+            font-size: 14px;
             color: #6c757d;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* Footer */
         footer {
             background: #1a1a1a;
             color: #adb5bd;
-            padding: 48px 24px;
+            padding: 40px 24px;
             text-align: center;
         }
 
         footer p {
             font-size: 14px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         footer a {
@@ -466,29 +579,35 @@
         /* Mobile Adjustments */
         @media (max-width: 767px) {
             .hero {
-                padding: 32px 24px;
+                padding: 0 0 32px 0;
             }
 
-            .product-title {
-                font-size: 32px;
+            .hero-grid {
+                gap: 24px;
             }
 
-            .price {
-                font-size: 40px;
+            .product-info {
+                padding: 0 20px;
             }
 
             .trust-badges {
                 grid-template-columns: 1fr;
-                gap: 16px;
+                gap: 12px;
+                text-align: left;
             }
 
-            .section-title {
-                font-size: 28px;
+            .trust-badge {
+                display: flex;
+                align-items: center;
+                gap: 12px;
             }
 
-            .main-image-container {
-                min-height: 400px;
-                padding: 40px 20px;
+            .trust-badge-icon {
+                margin: 0;
+            }
+
+            .trust-badge-text {
+                text-align: left;
             }
         }
     </style>
@@ -506,24 +625,31 @@
         <div class="hero-grid">
             <!-- Product Images -->
             <div class="product-images">
+                <div class="forbes-badge">
+                    Forbes Best TRT 2025
+                </div>
+                
                 <div class="main-image-container">
                     <img src="product-main.jpg" alt="Injectable Testosterone TRT" id="mainImage">
                 </div>
                 
                 <div class="thumbnail-gallery">
                     <div class="thumbnail active">
-                        <img src="product-main.jpg" alt="Main view">
-                    </div>
-                    <div class="thumbnail">
-                        <svg width="50" height="50" viewBox="0 0 50 50">
-                            <rect x="5" y="10" width="40" height="30" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
-                            <text x="25" y="30" text-anchor="middle" fill="#6c757d" font-size="12">Info</text>
+                        <svg width="100%" height="100%" viewBox="0 0 70 70">
+                            <rect width="70" height="70" fill="#f8f9fa"/>
+                            <text x="35" y="40" text-anchor="middle" fill="#6c757d" font-size="10">View 1</text>
                         </svg>
                     </div>
                     <div class="thumbnail">
-                        <svg width="50" height="50" viewBox="0 0 50 50">
-                            <circle cx="25" cy="25" r="15" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
-                            <text x="25" y="30" text-anchor="middle" fill="#6c757d" font-size="12">📋</text>
+                        <svg width="100%" height="100%" viewBox="0 0 70 70">
+                            <rect width="70" height="70" fill="#f8f9fa"/>
+                            <text x="35" y="40" text-anchor="middle" fill="#6c757d" font-size="10">Info</text>
+                        </svg>
+                    </div>
+                    <div class="thumbnail">
+                        <svg width="100%" height="100%" viewBox="0 0 70 70">
+                            <rect width="70" height="70" fill="#f8f9fa"/>
+                            <text x="35" y="40" text-anchor="middle" fill="#6c757d" font-size="10">Label</text>
                         </svg>
                     </div>
                 </div>
@@ -546,21 +672,66 @@
                     <p class="price-note">*Fully refundable if not approved for medication</p>
                 </div>
 
+                <!-- Included Checklist (compact, in buy box) -->
+                <div class="included-checklist">
+                    <div class="included-item-compact">
+                        <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" fill="#10b981"/>
+                            <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="included-item-compact-text">
+                            <strong>Free Testosterone Testing</strong>
+                            <span>Quarterly labs measuring 12+ biomarkers</span>
+                        </div>
+                    </div>
+
+                    <div class="included-item-compact">
+                        <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" fill="#10b981"/>
+                            <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="included-item-compact-text">
+                            <strong>Unlimited Clinician Consults</strong>
+                            <span>Private video calls with TRT specialists</span>
+                        </div>
+                    </div>
+
+                    <div class="included-item-compact">
+                        <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" fill="#10b981"/>
+                            <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="included-item-compact-text">
+                            <strong>Personalized Treatment Plan</strong>
+                            <span>Tailored prescriptions (Anastrozole included)</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- CTA -->
                 <button class="cta-primary" onclick="window.location.href='#'">Shop Now</button>
 
                 <!-- Trust Badges -->
                 <div class="trust-badges">
                     <div class="trust-badge">
-                        <div class="trust-badge-icon">📦</div>
+                        <svg class="trust-badge-icon" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="8" width="24" height="16" rx="2" stroke="#0066FF" stroke-width="2"/>
+                            <path d="M4 12h24M12 20h8" stroke="#0066FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
                         <div class="trust-badge-text">Free Priority Shipping</div>
                     </div>
                     <div class="trust-badge">
-                        <div class="trust-badge-icon">👨‍⚕️</div>
+                        <svg class="trust-badge-icon" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="12" r="4" stroke="#0066FF" stroke-width="2"/>
+                            <path d="M10 24c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#0066FF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
                         <div class="trust-badge-text">Doctor Access in 48h</div>
                     </div>
                     <div class="trust-badge">
-                        <div class="trust-badge-icon">✓</div>
+                        <svg class="trust-badge-icon" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="#0066FF" stroke-width="2"/>
+                            <path d="M11 16l4 4 8-8" stroke="#0066FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                         <div class="trust-badge-text">Money-Back Guarantee</div>
                     </div>
                 </div>
@@ -577,62 +748,59 @@
             <!-- Results Chart -->
             <div class="results-chart">
                 <div class="chart-container">
-                    <svg viewBox="0 0 700 350">
-                        <!-- Background grid lines -->
-                        <line x1="80" y1="280" x2="620" y2="280" stroke="#e9ecef" stroke-width="2"/>
-                        <line x1="80" y1="210" x2="620" y2="210" stroke="#e9ecef" stroke-width="1" stroke-dasharray="4,4"/>
-                        <line x1="80" y1="140" x2="620" y2="140" stroke="#e9ecef" stroke-width="1" stroke-dasharray="4,4"/>
-                        <line x1="80" y1="70" x2="620" y2="70" stroke="#e9ecef" stroke-width="1" stroke-dasharray="4,4"/>
+                    <svg viewBox="0 0 700 320" preserveAspectRatio="xMidYMid meet">
+                        <!-- Y-axis -->
+                        <line x1="60" y1="40" x2="60" y2="260" stroke="#dee2e6" stroke-width="2"/>
+                        
+                        <!-- X-axis -->
+                        <line x1="60" y1="260" x2="660" y2="260" stroke="#dee2e6" stroke-width="2"/>
+                        
+                        <!-- Grid lines -->
+                        <line x1="60" y1="190" x2="660" y2="190" stroke="#f1f3f5" stroke-width="1" stroke-dasharray="4,4"/>
+                        <line x1="60" y1="120" x2="660" y2="120" stroke="#f1f3f5" stroke-width="1" stroke-dasharray="4,4"/>
                         
                         <!-- Y-axis labels -->
-                        <text x="60" y="285" text-anchor="end" fill="#6c757d" font-size="12">300</text>
-                        <text x="60" y="215" text-anchor="end" fill="#6c757d" font-size="12">600</text>
-                        <text x="60" y="145" text-anchor="end" fill="#6c757d" font-size="12">900</text>
-                        <text x="60" y="75" text-anchor="end" fill="#6c757d" font-size="12">1200</text>
+                        <text x="45" y="265" text-anchor="end" fill="#6c757d" font-size="12">300</text>
+                        <text x="45" y="195" text-anchor="end" fill="#6c757d" font-size="12">600</text>
+                        <text x="45" y="125" text-anchor="end" fill="#6c757d" font-size="12">900</text>
+                        <text x="45" y="55" text-anchor="end" fill="#6c757d" font-size="12">1200</text>
                         
-                        <!-- Gradient area under curve -->
+                        <!-- Gradient area -->
                         <defs>
                             <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#0066FF;stop-opacity:0.1" />
+                                <stop offset="0%" style="stop-color:#0066FF;stop-opacity:0.15" />
                                 <stop offset="100%" style="stop-color:#0066FF;stop-opacity:0" />
                             </linearGradient>
                         </defs>
                         
                         <!-- Area fill -->
-                        <path d="M 80 280 L 80 240 L 200 180 L 320 130 L 440 90 L 560 70 L 620 65 L 620 280 Z" fill="url(#chartGrad)"/>
+                        <path d="M 60 260 L 60 220 L 180 170 L 300 130 L 420 90 L 540 70 L 660 60 L 660 260 Z" fill="url(#chartGrad)"/>
                         
                         <!-- Main line -->
-                        <path d="M 80 240 L 200 180 L 320 130 L 440 90 L 560 70 L 620 65" stroke="#0066FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <path d="M 60 220 L 180 170 L 300 130 L 420 90 L 540 70 L 660 60" stroke="#0066FF" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                         
                         <!-- Data points -->
-                        <circle cx="80" cy="240" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
-                        <circle cx="200" cy="180" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
-                        <circle cx="320" cy="130" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
-                        <circle cx="440" cy="90" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
-                        <circle cx="560" cy="70" r="5" fill="white" stroke="#0066FF" stroke-width="3"/>
+                        <circle cx="60" cy="220" r="4" fill="white" stroke="#0066FF" stroke-width="2"/>
+                        <circle cx="180" cy="170" r="4" fill="white" stroke="#0066FF" stroke-width="2"/>
+                        <circle cx="300" cy="130" r="4" fill="white" stroke="#0066FF" stroke-width="2"/>
+                        <circle cx="420" cy="90" r="4" fill="white" stroke="#0066FF" stroke-width="2"/>
+                        <circle cx="540" cy="70" r="4" fill="white" stroke="#0066FF" stroke-width="2"/>
+                        <circle cx="660" cy="60" r="6" fill="#0066FF"/>
                         
-                        <!-- Highlight final point -->
-                        <circle cx="620" cy="65" r="8" fill="#0066FF"/>
-                        <circle cx="620" cy="65" r="14" fill="none" stroke="#0066FF" stroke-width="2" opacity="0.3"/>
-                        
-                        <!-- Value label at peak -->
-                        <rect x="580" y="20" width="70" height="30" fill="white" rx="4" stroke="#e9ecef" stroke-width="1"/>
-                        <text x="615" y="40" text-anchor="middle" fill="#1a1a1a" font-size="14" font-weight="600">1084</text>
-                        
-                        <!-- Small avatar circle -->
-                        <circle cx="595" cy="65" r="18" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
-                        <text x="595" y="72" text-anchor="middle" font-size="20">👤</text>
+                        <!-- Value callout -->
+                        <rect x="630" y="25" width="60" height="24" fill="white" rx="4" stroke="#e9ecef" stroke-width="1"/>
+                        <text x="660" y="42" text-anchor="middle" fill="#1a1a1a" font-size="14" font-weight="700">1084</text>
                         
                         <!-- X-axis labels -->
-                        <text x="80" y="305" text-anchor="middle" fill="#6c757d" font-size="13">Mar</text>
-                        <text x="200" y="305" text-anchor="middle" fill="#6c757d" font-size="13">Apr</text>
-                        <text x="320" y="305" text-anchor="middle" fill="#6c757d" font-size="13">May</text>
-                        <text x="440" y="305" text-anchor="middle" fill="#6c757d" font-size="13">Jun</text>
-                        <text x="560" y="305" text-anchor="middle" fill="#6c757d" font-size="13">Jul</text>
-                        <text x="620" y="305" text-anchor="middle" fill="#6c757d" font-size="13" font-weight="600">Aug</text>
+                        <text x="60" y="280" text-anchor="middle" fill="#6c757d" font-size="13">Mar</text>
+                        <text x="180" y="280" text-anchor="middle" fill="#6c757d" font-size="13">Apr</text>
+                        <text x="300" y="280" text-anchor="middle" fill="#6c757d" font-size="13">May</text>
+                        <text x="420" y="280" text-anchor="middle" fill="#6c757d" font-size="13">Jun</text>
+                        <text x="540" y="280" text-anchor="middle" fill="#6c757d" font-size="13">Jul</text>
+                        <text x="660" y="280" text-anchor="middle" fill="#6c757d" font-size="13" font-weight="600">Aug</text>
                         
-                        <!-- Y-axis title -->
-                        <text x="30" y="180" text-anchor="middle" fill="#6c757d" font-size="12" transform="rotate(-90 30 180)">Total Testosterone (ng/dL)</text>
+                        <!-- Y-axis label -->
+                        <text x="20" y="150" text-anchor="middle" fill="#6c757d" font-size="11" transform="rotate(-90 20 150)">Total Testosterone (ng/dL)</text>
                     </svg>
                 </div>
             </div>
@@ -679,7 +847,7 @@
         </div>
     </section>
 
-    <!-- What's Included -->
+    <!-- What's Included (expanded version) -->
     <section class="included-section">
         <div class="included-container">
             <h2 class="section-title">Everything Included</h2>
@@ -742,7 +910,7 @@
         window.addEventListener('scroll', () => {
             if (window.innerWidth < 768) {
                 const heroBottom = hero.offsetTop + hero.offsetHeight;
-                if (window.scrollY > heroBottom) {
+                if (window.scrollY > heroBottom - 100) {
                     stickyCTA.classList.add('visible');
                 } else {
                     stickyCTA.classList.remove('visible');
@@ -750,15 +918,13 @@
             }
         });
 
-        // Thumbnail gallery (basic implementation)
+        // Thumbnail gallery
         const thumbnails = document.querySelectorAll('.thumbnail');
-        const mainImage = document.getElementById('mainImage');
         
-        thumbnails.forEach((thumb, index) => {
+        thumbnails.forEach((thumb) => {
             thumb.addEventListener('click', () => {
                 thumbnails.forEach(t => t.classList.remove('active'));
                 thumb.classList.add('active');
-                // In production, you'd switch images here
             });
         });
     </script>
