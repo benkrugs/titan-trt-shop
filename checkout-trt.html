@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout - TRT Injectable</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 100vh;
+        }
+        
+        /* Left Side - Order Summary */
+        .order-summary {
+            background: #fafafa;
+            padding: 60px 40px;
+            border-right: 1px solid #e1e1e1;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 40px;
+        }
+        
+        .product-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        
+        .product-image {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #5469d4;
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .product-details {
+            flex: 1;
+        }
+        
+        .product-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .product-variant {
+            font-size: 13px;
+            color: #777;
+        }
+        
+        .product-price {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        
+        .summary-row.total {
+            font-size: 18px;
+            font-weight: 700;
+            padding-top: 16px;
+            border-top: 1px solid #e1e1e1;
+            margin-top: 16px;
+        }
+        
+        .discount-tag {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .discount-tag::before {
+            content: "✓";
+            font-weight: bold;
+        }
+        
+        .trust-badges {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #e1e1e1;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: #555;
+        }
+        
+        .trust-icon {
+            width: 20px;
+            height: 20px;
+            color: #5469d4;
+        }
+        
+        /* Right Side - Checkout Form */
+        .checkout-form {
+            background: #fff;
+            padding: 60px 40px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+            font-size: 13px;
+            color: #777;
+        }
+        
+        .breadcrumb a {
+            color: #5469d4;
+            text-decoration: none;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .step-number {
+            background: #5469d4;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #333;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d1d1d1;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #5469d4;
+            box-shadow: 0 0 0 3px rgba(84, 105, 212, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 16px 0;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+        
+        .checkbox-group label {
+            margin: 0;
+            font-weight: 400;
+            font-size: 13px;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .payment-method {
+            padding: 10px 16px;
+            border: 2px solid #e1e1e1;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .payment-method.active {
+            border-color: #5469d4;
+            background: #f0f3ff;
+        }
+        
+        .card-element-placeholder {
+            padding: 14px;
+            border: 1px solid #d1d1d1;
+            border-radius: 6px;
+            background: #fafafa;
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+        
+        .cta-button {
+            width: 100%;
+            padding: 16px;
+            background: #5469d4;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: #3d51b8;
+        }
+        
+        .cta-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .secure-notice {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: #777;
+        }
+        
+        .secure-icon {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #856404;
+            margin-top: 24px;
+            line-height: 1.5;
+        }
+        
+        .disclaimer strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #e1e1e1;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-summary {
+                border-right: none;
+                border-bottom: 1px solid #e1e1e1;
+                padding: 32px 20px;
+            }
+            
+            .checkout-form {
+                padding: 32px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LEFT: Order Summary -->
+        <div class="order-summary">
+            <div class="logo">TRTRx</div>
+            
+            <div class="product-item">
+                <div class="product-image">
+                    <div class="product-badge">1</div>
+                    <!-- Placeholder - replace with actual image -->
+                    <svg viewBox="0 0 80 80" style="width:100%;height:100%;padding:16px;">
+                        <rect x="10" y="20" width="10" height="40" fill="#5469d4" rx="2"/>
+                        <circle cx="15" cy="15" r="5" fill="#3d51b8"/>
+                    </svg>
+                </div>
+                <div class="product-details">
+                    <div class="product-name">Injectable Testosterone Cypionate</div>
+                    <div class="product-variant">200mg/mL · 10mL vial</div>
+                </div>
+                <div class="product-price">$149.00</div>
+            </div>
+            
+            <div class="discount-tag">
+                First-time customer discount applied: Save $30
+            </div>
+            
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>$179.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Discount</span>
+                <span style="color: #28a745;">-$30.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span>$9.95</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span>$158.95 USD</span>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-item">
+                    <svg class="trust-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>256-bit SSL encrypted checkout</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Licensed pharmacy partner</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+                        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"/>
+                    </svg>
+                    <span>Discreet 2-day shipping</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>30-day money-back guarantee</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RIGHT: Checkout Form -->
+        <div class="checkout-form">
+            <div class="breadcrumb">
+                <a href="#">Cart</a> › <a href="#">Information</a> › <span>Payment</span>
+            </div>
+            
+            <form id="checkout-form">
+                <!-- Contact Info -->
+                <section>
+                    <div class="section-title">
+                        <span class="step-number">1</span>
+                        Contact Information
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="subscribe" name="subscribe">
+                        <label for="subscribe">Email me with news and exclusive offers</label>
+                    </div>
+                </section>
+                
+                <!-- Shipping Address -->
+                <section>
+                    <div class="section-title">
+                        <span class="step-number">2</span>
+                        Shipping Address
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First name</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last name</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Street address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address2">Apartment, suite, etc. (optional)</label>
+                        <input type="text" id="address2" name="address2">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <select id="state" name="state" required>
+                                <option value="">Select state</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <!-- Add remaining states -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP code</label>
+                        <input type="text" id="zip" name="zip" pattern="[0-9]{5}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+                    </div>
+                </section>
+                
+                <!-- Payment -->
+                <section>
+                    <div class="section-title">
+                        <span class="step-number">3</span>
+                        Payment Method
+                    </div>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-method active">💳 Credit Card</div>
+                        <div class="payment-method">PayPal</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Card information</label>
+                        <!-- Stripe Elements will mount here -->
+                        <div id="card-element" class="card-element-placeholder">
+                            Stripe payment form will load here
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="billing-same" name="billing-same" checked>
+                        <label for="billing-same">Billing address same as shipping</label>
+                    </div>
+                </section>
+                
+                <!-- Submit -->
+                <button type="submit" class="cta-button">Complete Order · $158.95</button>
+                
+                <div class="secure-notice">
+                    <svg class="secure-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                    </svg>
+                    All transactions are secure and encrypted
+                </div>
+                
+                <div class="disclaimer">
+                    <strong>⚕️ Medical Disclaimer</strong>
+                    This product requires a valid prescription. By completing this purchase, you confirm that you have consulted with a licensed healthcare provider and have received a prescription for testosterone therapy. This product is intended for use only as directed by your physician. Not suitable for women who are pregnant or may become pregnant.
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        // Placeholder for Stripe integration
+        // When ready, initialize Stripe Elements like this:
+        
+        /*
+        const stripe = Stripe('YOUR_PUBLISHABLE_KEY');
+        const elements = stripe.elements();
+        const cardElement = elements.create('card');
+        cardElement.mount('#card-element');
+        
+        document.getElementById('checkout-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const {paymentMethod, error} = await stripe.createPaymentMethod({
+                type: 'card',
+                card: cardElement,
+                billing_details: {
+                    name: document.getElementById('first-name').value + ' ' + document.getElementById('last-name').value,
+                    email: document.getElementById('email').value,
+                }
+            });
+            
+            if (error) {
+                console.error(error);
+            } else {
+                // Send paymentMethod.id to your server
+                console.log('Payment method created:', paymentMethod.id);
+            }
+        });
+        */
+        
+        // Temporary form handler (remove when Stripe is wired)
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Form submitted! Wire up Stripe to process payment.');
+        });
+    </script>
+</body>
+</html>
