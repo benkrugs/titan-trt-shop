@@ -71,90 +71,16 @@
         }
 
         /* Product Image Section */
-        .product-images {
-            position: relative;
-        }
-
-        .forbes-badge {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            background: white;
-            padding: 8px 12px;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            z-index: 10;
-            font-size: 11px;
-            font-weight: 600;
-            color: #1a1a1a;
-        }
-
-        .main-image-container {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            aspect-ratio: 1 / 1;
-        }
-
-        .main-image-container img {
+        .product-image {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 32px;
+            height: auto;
+            display: block;
         }
 
         @media (max-width: 767px) {
-            .main-image-container {
-                aspect-ratio: 4 / 3;
-                border-radius: 0;
+            .product-image {
+                margin-bottom: 0;
             }
-            
-            .main-image-container img {
-                padding: 24px;
-            }
-            
-            .forbes-badge {
-                top: 12px;
-                left: 12px;
-                padding: 6px 10px;
-                font-size: 10px;
-            }
-        }
-
-        /* Thumbnail Gallery */
-        .thumbnail-gallery {
-            display: flex;
-            gap: 12px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            margin-top: 12px;
-        }
-
-        .thumbnail-gallery::-webkit-scrollbar {
-            display: none;
-        }
-
-        .thumbnail {
-            flex-shrink: 0;
-            width: 70px;
-            height: 70px;
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: border-color 0.2s;
-        }
-
-        .thumbnail:hover,
-        .thumbnail.active {
-            border-color: #0066FF;
         }
 
         /* Product Info Section */
@@ -623,37 +549,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-grid">
-            <!-- Product Images -->
-            <div class="product-images">
-                <div class="forbes-badge">
-                    Forbes Best TRT 2025
-                </div>
-                
-                <div class="main-image-container">
-                    <img src="product-main.jpg" alt="Injectable Testosterone TRT" id="mainImage">
-                </div>
-                
-                <div class="thumbnail-gallery">
-                    <div class="thumbnail active">
-                        <svg width="100%" height="100%" viewBox="0 0 70 70">
-                            <rect width="70" height="70" fill="#f8f9fa"/>
-                            <text x="35" y="40" text-anchor="middle" fill="#6c757d" font-size="10">View 1</text>
-                        </svg>
-                    </div>
-                    <div class="thumbnail">
-                        <svg width="100%" height="100%" viewBox="0 0 70 70">
-                            <rect width="70" height="70" fill="#f8f9fa"/>
-                            <text x="35" y="40" text-anchor="middle" fill="#6c757d" font-size="10">Info</text>
-                        </svg>
-                    </div>
-                    <div class="thumbnail">
-                        <svg width="100%" height="100%" viewBox="0 0 70 70">
-                            <rect width="70" height="70" fill="#f8f9fa"/>
-                            <text x="35" y="40" text-anchor="middle" fill="#6c757d" font-size="10">Label</text>
-                        </svg>
-                    </div>
-                </div>
-            </div>
+            <!-- Product Image -->
+            <img src="product-main.jpg" alt="Injectable Testosterone TRT" class="product-image">
 
             <!-- Product Info -->
             <div class="product-info">
@@ -916,16 +813,6 @@
                     stickyCTA.classList.remove('visible');
                 }
             }
-        });
-
-        // Thumbnail gallery
-        const thumbnails = document.querySelectorAll('.thumbnail');
-        
-        thumbnails.forEach((thumb) => {
-            thumb.addEventListener('click', () => {
-                thumbnails.forEach(t => t.classList.remove('active'));
-                thumb.classList.add('active');
-            });
         });
     </script>
 </body>
