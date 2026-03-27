@@ -76,73 +76,74 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-            color: #ffffff;
-            background: #000000;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #FFFFFF;
+            color: #1a1a1a;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
         
         /* Header */
-        .header {
-            background: #000000;
-            padding: 1rem 2rem;
+        header {
+            background: #1a1a1a;
+            padding: 20px 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid #1a1a1a;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .header-content {
             max-width: 1400px;
             margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-size: 1.75rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: #ffffff;
+            color: #FFFFFF;
+            font-size: 22px;
+            font-weight: 700;
             text-decoration: none;
+            letter-spacing: 2px;
         }
         
         .header-cta {
             background: transparent;
             color: #ffffff;
             border: 1px solid #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
+            padding: 10px 20px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.875rem;
+            font-size: 13px;
             letter-spacing: 0.5px;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
         }
         
         .header-cta:hover {
             background: #ffffff;
-            color: #000000;
+            color: #1a1a1a;
         }
         
         /* Announcement Bar */
         .announcement {
-            background: #f5f5f5;
-            color: #000000;
+            background: #f8f9fa;
+            color: #1a1a1a;
             text-align: center;
-            padding: 0.75rem;
-            font-size: 0.875rem;
+            padding: 12px;
+            font-size: 13px;
             font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
         
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #c1272d 0%, #8b1a1f 100%);
-            padding: 4rem 2rem;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
+            padding: 64px 24px;
         }
         
         .hero-content {
@@ -150,37 +151,36 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 64px;
             align-items: center;
-        }
-        
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .hero-text p {
-            font-size: 1.125rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            opacity: 0.95;
         }
         
         .hero-badge {
             display: inline-block;
-            background: #ffffff;
-            color: #c1272d;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            background: #f8f9fa;
+            color: #495057;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .hero-text h1 {
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+        
+        .hero-text p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.95);
+            margin-bottom: 32px;
         }
         
         .hero-image {
@@ -194,29 +194,24 @@
         
         .btn-primary {
             display: inline-block;
-            background: #ffffff;
-            color: #c1272d;
-            padding: 1.25rem 3rem;
-            font-size: 1rem;
-            font-weight: 700;
+            background: #0066FF;
+            color: white;
             text-decoration: none;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
         }
         
         .btn-primary:hover {
-            background: #f5f5f5;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+            background: #0052CC;
         }
         
         /* Features Section */
         .features {
-            background: #000000;
-            padding: 4rem 2rem;
+            background: #f8f9fa;
+            padding: 64px 24px;
         }
         
         .features-content {
@@ -224,39 +219,63 @@
             margin: 0 auto;
         }
         
+        .section-title {
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+        
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 40px;
         }
         
         .feature {
-            text-align: center;
+            background: white;
+            padding: 32px 24px;
+            border-radius: 12px;
+            text-align: left;
         }
         
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 44px;
+            height: 44px;
+            background: #e7f3ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: #0066FF;
+            stroke-width: 2;
+            fill: none;
         }
         
         .feature h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
         }
         
         .feature p {
-            color: #999999;
-            line-height: 1.6;
+            font-size: 14px;
+            color: #6c757d;
+            line-height: 1.5;
         }
         
         /* Process Section */
         .process {
-            background: #000000;
-            padding: 4rem 2rem;
+            background: white;
+            padding: 64px 24px;
         }
         
         .process-content {
@@ -265,126 +284,126 @@
         }
         
         .process h2 {
-            font-size: 1.75rem;
-            font-weight: 400;
+            font-size: 36px;
+            font-weight: 600;
             text-align: center;
-            margin-bottom: 1rem;
-            color: #999999;
-            letter-spacing: 0.5px;
-        }
-        
-        .process-subtitle {
-            text-align: center;
-            color: #999999;
-            font-size: 1.125rem;
-            margin-bottom: 4rem;
+            margin-bottom: 48px;
+            color: #1a1a1a;
         }
         
         .process-steps {
             display: flex;
             flex-direction: column;
-            gap: 4rem;
+            gap: 48px;
         }
         
         .step {
-            text-align: center;
-            position: relative;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
         }
         
         .step-number {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-        
-        .step-number-circle {
-            width: 100px;
-            height: 100px;
-            background: #c1272d;
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            background: #0066FF;
             border-radius: 50%;
-            position: relative;
-            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
         }
         
-        .step-number-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
-            font-weight: 900;
-            color: #ffffff;
-            line-height: 1;
-            font-family: Arial, sans-serif;
-        }
-        
-        .step-day-label {
-            font-size: 1.75rem;
-            font-weight: 900;
-            color: #ffffff;
-            margin-top: -2.5rem;
-            margin-bottom: 0.5rem;
-            font-family: Arial, sans-serif;
+        .step-content {
+            flex: 1;
         }
         
         .step h3 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ffffff;
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
         }
         
         .step p {
-            color: #999999;
-            text-align: center;
-            line-height: 1.8;
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #6c757d;
         }
         
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #c1272d 0%, #8b1a1f 100%);
-            padding: 4rem 2rem;
+            padding: 64px 24px;
             text-align: center;
         }
         
         .cta-content h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #ffffff;
         }
         
         .cta-content p {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            font-size: 16px;
+            margin-bottom: 32px;
+            color: rgba(255,255,255,0.95);
+        }
+        
+        .price-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 0 auto 32px;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .price-label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 8px;
         }
         
         .price-tag {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
         }
         
         .price-old {
             text-decoration: line-through;
             opacity: 0.6;
-            font-size: 1.5rem;
-            margin-right: 1rem;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .price-new {
+            font-size: 42px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .price-note {
+            font-size: 13px;
+            color: rgba(255,255,255,0.8);
+            margin-top: 12px;
         }
         
         /* Footer */
-        .footer {
-            background: #000000;
-            padding: 3rem 2rem 2rem;
-            border-top: 1px solid #1a1a1a;
+        footer {
+            background: #1a1a1a;
+            color: #adb5bd;
+            padding: 48px 24px 32px;
         }
         
         .footer-content {
@@ -392,23 +411,36 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 48px;
+            margin-bottom: 48px;
         }
         
         .footer-brand h3 {
-            font-size: 1.5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
             letter-spacing: 2px;
+            color: #ffffff;
+        }
+        
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #adb5bd;
+        }
+        
+        .footer-brand a {
+            color: #0066FF;
+            text-decoration: none;
         }
         
         .footer-links h4 {
-            font-size: 0.875rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            color: #ffffff;
         }
         
         .footer-links ul {
@@ -416,14 +448,14 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.75rem;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
-            color: #999999;
+            color: #adb5bd;
             text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.3s ease;
+            font-size: 14px;
+            transition: color 0.2s;
         }
         
         .footer-links a:hover {
@@ -433,67 +465,59 @@
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid #1a1a1a;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding-top: 32px;
+            border-top: 1px solid #343a40;
         }
         
         .footer-legal {
-            color: #666666;
-            font-size: 0.75rem;
+            color: #6c757d;
+            font-size: 12px;
             line-height: 1.6;
         }
         
-        .legitscript-badge img {
-            height: 60px;
+        .footer-legal p {
+            margin-bottom: 12px;
         }
         
         /* Mobile Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             .hero-content {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
             
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 28px;
             }
             
             .features-grid {
                 grid-template-columns: 1fr;
+                gap: 24px;
             }
             
             .process h2 {
-                font-size: 1.5rem;
+                font-size: 28px;
             }
             
-            .process-steps {
-                gap: 3rem;
+            .step {
+                flex-direction: column;
+                text-align: center;
             }
             
-            .step-number-circle {
-                width: 80px;
-                height: 80px;
+            .step-number {
+                margin: 0 auto;
             }
             
-            .step-number-text {
-                font-size: 2.25rem;
-            }
-            
-            .step h3 {
-                font-size: 1.25rem;
+            .cta-content h2 {
+                font-size: 28px;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 2rem;
                 text-align: center;
             }
             
@@ -505,7 +529,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header>
         <div class="header-content">
             <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="logo">TITAN</a>
             <a href="contact.html" class="header-cta">CONTACT</a>
@@ -514,20 +538,20 @@
     
     <!-- Announcement Bar -->
     <div class="announcement">
-        SPECIAL OFFER: $100 Off Labs + Clinician Consultation
+        Special Offer: $100 Off Labs + Clinician Consultation
     </div>
     
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-badge">AT-HOME TEST KIT - $49</div>
+                <span class="hero-badge">At-Home Test Kit - $49</span>
                 <h1>Titan Testosterone Test Kit</h1>
                 <p>Complete at-home testing kit to measure testosterone and 12+ critical biomarkers essential to your energy, drive, and well-being. Includes online consultation with a licensed clinician to analyze your results and build a personalized plan.</p>
-                <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn-primary">Order Test Kit - $49 →</a>
+                <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn-primary">Order Test Kit - $49</a>
             </div>
             <div class="hero-image">
-                <img src="hero-product.webp" alt="Titan TRT Test Kit" style="max-width: 100%; height: auto;">
+                <img src="hero-product.webp" alt="Titan TRT Test Kit">
             </div>
         </div>
     </section>
@@ -535,20 +559,35 @@
     <!-- Features -->
     <section class="features">
         <div class="features-content">
-            <h2 style="text-align: center; font-size: 2rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2rem;">What's In The Kit</h2>
+            <h2 class="section-title">What's In The Kit</h2>
             <div class="features-grid">
                 <div class="feature">
-                    <div class="feature-icon">📦</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+                        </svg>
+                    </div>
                     <h3>Physical Test Kit</h3>
                     <p>At-home blood collection kit shipped directly to you. Test 12+ biomarkers including Total T, Free T, SHBG, LH, PSA, and more.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">👨‍⚕️</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2a10 10 0 0 1 10 10v1a4 4 0 0 1-4 4h-1.5a1 1 0 0 0-1 1v1a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1a1 1 0 0 0-1-1H7a4 4 0 0 1-4-4v-1A10 10 0 0 1 12 2z" />
+                            <path d="M8 10h.01M12 10h.01M16 10h.01" />
+                        </svg>
+                    </div>
                     <h3>Online Consultation</h3>
                     <p>Private video call with licensed clinician to analyze your results, symptoms, and goals to build a plan tailored to you.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">💊</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="5" y="2" width="14" height="20" rx="2" />
+                            <path d="M12 18h.01" />
+                        </svg>
+                    </div>
                     <h3>TRT Access (If Prescribed)</h3>
                     <p>If prescribed, get access to TRT medications designed to restore your energy, sex drive, and vitality.</p>
                 </div>
@@ -563,33 +602,27 @@
             
             <div class="process-steps">
                 <div class="step">
-                    <div class="step-number">
-                        <div class="step-number-circle">
-                            <div class="step-number-text">Day<br>1</div>
-                        </div>
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Order Your Test Kit</h3>
+                        <p>Receive at-home blood collection kit. Choose convenient at-home collection or visit a nearby Quest/Labcorp to test your testosterone and critical biomarkers essential to your well-being and drive.</p>
                     </div>
-                    <h3>Order Your Test Kit</h3>
-                    <p>Receive at-home blood collection kit. Choose convenient at-home collection or visit a nearby Quest/Labcorp to test your testosterone and critical biomarkers essential to your well-being and drive.</p>
                 </div>
                 
                 <div class="step">
-                    <div class="step-number">
-                        <div class="step-number-circle">
-                            <div class="step-number-text">Day<br>3</div>
-                        </div>
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Review Your Results</h3>
+                        <p>Once your lab results are in, meet with a licensed clinician online to analyze your results, symptoms, and goals to build a plan tailored to you.</p>
                     </div>
-                    <h3>Review Your Results</h3>
-                    <p>Once your lab results are in, meet with a licensed clinician online to analyze your results, symptoms, and goals to build a plan tailored to you.</p>
                 </div>
                 
                 <div class="step">
-                    <div class="step-number">
-                        <div class="step-number-circle">
-                            <div class="step-number-text">Day<br>5</div>
-                        </div>
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get Your Medication</h3>
+                        <p>If prescribed, get access to TRT medications designed to restore your energy, sex drive, and all the other benefits that come with optimized testosterone levels.</p>
                     </div>
-                    <h3>Get Your Medication</h3>
-                    <p>If prescribed, get access to TRT medications designed to restore your energy, sex drive, and all the other benefits that come with optimized testosterone levels.</p>
                 </div>
             </div>
         </div>
@@ -600,35 +633,37 @@
         <div class="cta-content">
             <h2>Order Your Test Kit Today</h2>
             <p>Complete at-home testosterone testing kit with lab analysis and online clinician consultation</p>
-            <div class="price-tag">
-                <span class="price-old">$149</span>
-                <span>$49</span>
+            <div class="price-section">
+                <div class="price-label">30-Day Supply</div>
+                <div class="price-tag">
+                    <span class="price-old">$149</span>
+                    <span class="price-new">$49</span>
+                </div>
+                <p class="price-note">Ships free to your door. Start testing in 2-3 business days.</p>
             </div>
-            <p style="font-size: 1rem; margin-top: 1rem; opacity: 0.9;">Ships free to your door. Start testing in 2-3 business days.</p>
-            <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn-primary">Order Test Kit - $49 →</a>
+            <a href="https://jointitan.com/?toclid=TO-2RbC8WhCGKBLFQ2J90aUB9&utm_source=theoffer&utm_campaign=94&sub1=shop" class="btn-primary">Order Test Kit - $49</a>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <h3>💪 TITAN</h3>
-                <p style="color: #666666; font-size: 0.875rem; line-height: 1.6;"><strong>SSK Marketing LLC</strong><br>
+                <h3>TITAN</h3>
+                <p><strong>SSK Marketing LLC</strong><br>
                 480 Morris Avenue<br>
                 Summit, NJ 07901<br>
-                <a href="mailto:support@titan-trt.com" style="color: #F97316;">support@titan-trt.com</a><br>
-                (908) 555-1234</p>
+                <a href="mailto:support@titan-trt.com">support@titan-trt.com</a></p>
             </div>
             
             <div class="footer-links">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="refund-policy.html">Refund & Return Policy</a></li>
+                    <li><a href="refund-policy.html">Refund Policy</a></li>
                     <li><a href="terms-of-service.html">Terms of Service</a></li>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="payment-policy.html">Payment Policy</a></li>
-                    <li><a href="shipping-policy.html">Shipping & Delivery</a></li>
+                    <li><a href="shipping-policy.html">Shipping Policy</a></li>
                 </ul>
             </div>
             
@@ -636,8 +671,7 @@
                 <h4>Support</h4>
                 <ul>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li style="color: #666666; font-size: 0.875rem;">Monday - Friday<br>9:00 AM - 6:00 PM EST</li>
-                    <li style="color: #666666; font-size: 0.875rem;">Saturday<br>10:00 AM - 4:00 PM EST</li>
+                    <li style="color: #6c757d; font-size: 14px; margin-top: 8px;">Monday - Friday<br>9:00 AM - 6:00 PM EST</li>
                 </ul>
             </div>
         </div>
@@ -645,9 +679,9 @@
         <div class="footer-bottom">
             <div class="footer-legal">
                 <p><strong>Product Description:</strong> The Titan Testosterone Test Kit is a physical at-home blood collection kit that ships to your address. The kit includes supplies for blood sample collection, prepaid shipping to certified labs, laboratory analysis of 12+ biomarkers, and one online consultation with a licensed clinician to review your results.</p>
-                <p style="margin-top: 1rem;"><strong>Important Information:</strong> Lab testing is for informational purposes only and does not constitute medical advice. Consult with a licensed healthcare provider for diagnosis or treatment decisions. If prescribed, TRT medications are a separate purchase and require a valid prescription from a licensed healthcare professional.</p>
-                <p style="margin-top: 1rem;"><strong>Shipping:</strong> Free shipping to all 50 US states. Orders ship from Summit, NJ within 1 business day. Delivery: 3-8 business days depending on location. Currency: USD.</p>
-                <p style="margin-top: 1rem; border-top: 1px solid #333; padding-top: 1rem;">©2026 SSK Marketing LLC. All rights reserved.</p>
+                <p><strong>Important Information:</strong> Lab testing is for informational purposes only and does not constitute medical advice. Consult with a licensed healthcare provider for diagnosis or treatment decisions. If prescribed, TRT medications are a separate purchase and require a valid prescription from a licensed healthcare professional.</p>
+                <p><strong>Shipping:</strong> Free shipping to all 50 US states. Orders ship from Summit, NJ within 1 business day. Delivery: 3-8 business days depending on location. Currency: USD.</p>
+                <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #343a40;">© 2026 SSK Marketing LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
