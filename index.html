@@ -467,9 +467,14 @@
             margin: 0 auto;
             padding-top: 32px;
             border-top: 1px solid #343a40;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
         }
         
         .footer-legal {
+            flex: 1;
             color: #6c757d;
             font-size: 12px;
             line-height: 1.6;
@@ -477,6 +482,15 @@
         
         .footer-legal p {
             margin-bottom: 12px;
+        }
+        
+        .legitscript-badge {
+            flex-shrink: 0;
+        }
+        
+        .legitscript-badge img {
+            height: 80px;
+            width: auto;
         }
         
         /* Mobile Responsive */
@@ -518,6 +532,11 @@
             
             .footer-content {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
                 text-align: center;
             }
             
@@ -682,6 +701,11 @@
                 <p><strong>Important Information:</strong> Lab testing is for informational purposes only and does not constitute medical advice. Consult with a licensed healthcare provider for diagnosis or treatment decisions. If prescribed, TRT medications are a separate purchase and require a valid prescription from a licensed healthcare professional.</p>
                 <p><strong>Shipping:</strong> Free shipping to all 50 US states. Orders ship from Summit, NJ within 1 business day. Delivery: 3-8 business days depending on location. Currency: USD.</p>
                 <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #343a40;">© 2026 SSK Marketing LLC. All rights reserved.</p>
+            </div>
+            <div class="legitscript-badge">
+                <a href="https://legitscript.com/websites/?checker_keywords=jointitan.com" target="_blank" rel="noopener">
+                    <img src="legitscript-badge.jpg" alt="LegitScript Certified">
+                </a>
             </div>
         </div>
     </footer>
