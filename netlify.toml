@@ -2,7 +2,11 @@
   publish = "."
   command = "echo 'Static site - no build needed'"
 
+# Serve robots.txt as-is
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/robots.txt"
+  to = "/robots.txt"
   status = 200
+
+# This redirect is removed - static HTML files should be served directly
+# Each .html file will be served at its own URL
