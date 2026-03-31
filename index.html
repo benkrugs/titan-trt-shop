@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titan TRT - Testosterone Replacement Therapy</title>
-    <meta name="description" content="Doctor-designed testosterone replacement therapy. Restore your energy, vitality, and performance with clinical-grade TRT.">
+    <title>Testosterone Replacement Therapy Online | Titan</title>
+    <meta name="description" content="Doctor-prescribed TRT delivered to your door. Start today for $49 including blood work panel and clinician consultation.">
     
     <style>
         * {
@@ -35,9 +35,6 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
         
         .logo {
@@ -48,49 +45,78 @@
             letter-spacing: 2px;
         }
         
-        .header-cta {
-            background: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            letter-spacing: 0.5px;
-            transition: all 0.2s;
-        }
-        
-        .header-cta:hover {
-            background: #ffffff;
-            color: #1a1a1a;
-        }
-        
-        /* Hero */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            padding: 120px 24px;
-            text-align: center;
+            background: #f8f9fa;
+            padding: 80px 24px;
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 1400px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .hero-text {
+            order: 1;
+        }
+        
+        .hero-image {
+            order: 2;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .benefits-top {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+        
+        .benefits-top li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+        
+        .benefits-top li::before {
+            content: "✓";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
         }
         
         .hero h1 {
             font-size: 48px;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
         }
         
         .hero p {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 40px;
-            color: rgba(255,255,255,0.9);
+            color: #6c757d;
+            margin-bottom: 32px;
         }
         
         .btn-primary {
@@ -98,34 +124,49 @@
             background: #0066FF;
             color: white;
             text-decoration: none;
-            padding: 16px 40px;
+            padding: 18px 48px;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
         }
         
         .btn-primary:hover {
             background: #0052CC;
+            transform: translateY(-2px);
         }
         
-        /* Benefits */
-        .benefits {
+        .badge-new {
+            display: inline-block;
+            background: #0066FF;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        /* Results Section */
+        .results {
             padding: 80px 24px;
             background: white;
         }
         
-        .benefits-content {
+        .results-content {
             max-width: 1200px;
             margin: 0 auto;
         }
         
         .section-title {
-            font-size: 36px;
-            font-weight: 600;
+            font-size: 42px;
+            font-weight: 700;
             text-align: center;
             margin-bottom: 16px;
             color: #1a1a1a;
+            line-height: 1.2;
         }
         
         .section-subtitle {
@@ -138,100 +179,86 @@
             margin-right: auto;
         }
         
-        .benefits-grid {
+        .results-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
+            gap: 32px;
+            margin-bottom: 48px;
         }
         
-        .benefit {
+        .result-item {
             text-align: center;
         }
         
-        .benefit-icon {
-            width: 64px;
-            height: 64px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin: 0 auto 24px;
+        .result-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 20px;
         }
         
-        .benefit h3 {
+        .result-item h3 {
             font-size: 20px;
             font-weight: 600;
-            margin-bottom: 12px;
             color: #1a1a1a;
+            margin-bottom: 8px;
         }
         
-        .benefit p {
+        .result-item p {
             font-size: 15px;
-            line-height: 1.6;
             color: #6c757d;
+            line-height: 1.5;
         }
         
-        /* Product CTA */
-        .product-cta {
-            background: #f8f9fa;
-            padding: 80px 24px;
-        }
-        
-        .product-cta-content {
-            max-width: 900px;
-            margin: 0 auto;
+        .cta-center {
             text-align: center;
+            margin-top: 48px;
         }
         
-        .product-cta h2 {
-            font-size: 36px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #1a1a1a;
+        /* Reasons Section */
+        .reasons {
+            padding: 80px 24px;
+            background: #f8f9fa;
         }
         
-        .product-cta p {
-            font-size: 18px;
-            color: #6c757d;
-            margin-bottom: 40px;
+        .reasons-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        .product-card {
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .reason-item {
+            text-align: center;
             background: white;
+            padding: 32px 24px;
             border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            margin-bottom: 32px;
         }
         
-        .product-card h3 {
-            font-size: 28px;
+        .reason-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+        .reason-item h3 {
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 12px;
             color: #1a1a1a;
+            margin-bottom: 8px;
         }
         
-        .product-card .description {
-            font-size: 16px;
+        .reason-item p {
+            font-size: 14px;
             color: #6c757d;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-        
-        .product-card .price {
-            font-size: 42px;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 24px;
-        }
-        
-        .product-card .price-note {
-            font-size: 13px;
-            color: #6c757d;
-            margin-top: -16px;
-            margin-bottom: 24px;
+            line-height: 1.5;
         }
         
         /* How It Works */
@@ -241,48 +268,87 @@
         }
         
         .how-it-works-content {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            margin-top: 48px;
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-bottom: 48px;
         }
         
-        .step {
-            display: flex;
-            gap: 24px;
-            align-items: flex-start;
+        .timeline-item {
+            text-align: center;
         }
         
-        .step-number {
-            flex-shrink: 0;
-            width: 48px;
-            height: 48px;
-            background: #0066FF;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
+        .timeline-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .timeline-item .day-label {
+            font-size: 14px;
             font-weight: 700;
-            color: white;
-        }
-        
-        .step-content h3 {
-            font-size: 18px;
-            font-weight: 600;
+            color: #0066FF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 8px;
-            color: #1a1a1a;
         }
         
-        .step-content p {
+        .timeline-item h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        
+        .timeline-item p {
             font-size: 15px;
-            line-height: 1.6;
             color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 24px;
+            background: #f8f9fa;
+        }
+        
+        .final-cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+            text-transform: uppercase;
+        }
+        
+        .final-cta p {
+            font-size: 18px;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+        
+        .offer-image {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        .offer-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
         }
         
         /* Footer */
@@ -381,26 +447,44 @@
         
         /* Mobile */
         @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-text {
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+            }
+            
             .hero h1 {
                 font-size: 36px;
             }
             
             .section-title {
-                font-size: 28px;
+                font-size: 32px;
             }
             
-            .benefits-grid {
+            .results-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
             
-            .step {
-                flex-direction: column;
-                text-align: center;
+            .reasons-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
             }
             
-            .step-number {
-                margin: 0 auto;
+            .timeline {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .final-cta h2 {
+                font-size: 32px;
             }
             
             .footer-content {
@@ -412,10 +496,6 @@
                 flex-direction: column;
                 text-align: center;
             }
-            
-            .header-cta {
-                display: none;
-            }
         }
     </style>
 </head>
@@ -424,59 +504,90 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">TITAN</a>
-            <a href="contact.html" class="header-cta">CONTACT</a>
         </div>
     </header>
     
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Restore Your Testosterone. Reclaim Your Life.</h1>
-            <p>Doctor-designed testosterone replacement therapy to optimize your energy, strength, and vitality.</p>
-            <a href="injectable-trt.html" class="btn-primary">View Treatment Options</a>
-        </div>
-    </section>
-    
-    <!-- Benefits -->
-    <section class="benefits">
-        <div class="benefits-content">
-            <h2 class="section-title">Clinical Benefits of TRT</h2>
-            <p class="section-subtitle">Restore optimal testosterone levels and experience comprehensive health improvements</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>Restore Energy & Vitality</h3>
-                    <p>Improve energy levels, libido, and overall vitality by restoring testosterone to optimal physiologic levels.</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">💪</div>
-                    <h3>Build Muscle & Strength</h3>
-                    <p>Support lean muscle mass, strength, bone density, and healthier body composition.</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">🧠</div>
-                    <h3>Support Metabolic Health</h3>
-                    <p>Help improve insulin sensitivity, focus, mood stability, and long-term metabolic health.</p>
-                </div>
+            <div class="hero-text">
+                <ul class="benefits-top">
+                    <li>Scientifically-proven TRT medications</li>
+                    <li>100% online & clinician-prescribed</li>
+                    <li>Free shipping & discreet packaging</li>
+                </ul>
+                <span class="badge-new">New</span>
+                <h1>Restore Your Vitality With Titan TRT</h1>
+                <p>Experience our most powerful TRT formula yet: a clinically tested, pharmaceutical-grade formulation designed to elevate both total & free testosterone levels for optimal results.</p>
+                <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=homepage" class="btn-primary">Get started for $49</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-image.webp" alt="Titan TRT">
             </div>
         </div>
     </section>
     
-    <!-- Product CTA -->
-    <section class="product-cta">
-        <div class="product-cta-content">
-            <h2>Our Treatment</h2>
-            <p>Pharmaceutical-grade testosterone replacement therapy designed by doctors</p>
+    <!-- Results -->
+    <section class="results">
+        <div class="results-content">
+            <h2 class="section-title">Results You'll Feel In Weeks With Higher T</h2>
+            <p class="section-subtitle">When your levels are right, everything changes. Here's what you can expect when you join Titan:</p>
             
-            <div class="product-card">
-                <h3>Injectable Testosterone</h3>
-                <p class="description">Doctor-designed testosterone replacement therapy formulated with pharmaceutical-grade MCT oil for optimal absorption. Convenient at-home injections restore testosterone to physiologic levels.</p>
-                <div class="price">$159</div>
-                <p class="price-note">30-day supply</p>
-                <a href="injectable-trt.html" class="btn-primary">Learn More</a>
+            <div class="results-grid">
+                <div class="result-item">
+                    <img src="images/energy.webp" alt="Increased Energy">
+                    <h3>Increased Energy & Drive</h3>
+                    <p>Feel more motivated and energized throughout your day</p>
+                </div>
+                <div class="result-item">
+                    <img src="images/sex-life.webp" alt="Enhanced Performance">
+                    <h3>Enhanced Performance</h3>
+                    <p>Boost your confidence and vitality where it matters most</p>
+                </div>
+                <div class="result-item">
+                    <img src="images/burn-fat.webp" alt="Better Body Composition">
+                    <h3>Better Body Composition</h3>
+                    <p>Build lean muscle and reduce body fat more effectively</p>
+                </div>
+            </div>
+            
+            <div class="cta-center">
+                <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=homepage" class="btn-primary">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Reasons -->
+    <section class="reasons">
+        <div class="reasons-content">
+            <h2 class="section-title">4 Reasons Why Men Choose Titan For TRT</h2>
+            <p class="section-subtitle">Most clinics hand you a script and disappear. Titan's all-inclusive care covers everything you need to start TRT safely & effectively.</p>
+            
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <img src="images/doctors.webp" alt="Licensed Clinicians">
+                    <h3>Licensed Clinicians</h3>
+                    <p>Work with experienced doctors who specialize in hormone therapy</p>
+                </div>
+                <div class="reason-item">
+                    <img src="images/testing.webp" alt="Comprehensive Testing">
+                    <h3>Comprehensive Testing</h3>
+                    <p>Full blood panel analysis to monitor your progress</p>
+                </div>
+                <div class="reason-item">
+                    <img src="images/medicines-in-box.webp" alt="Premium Medications">
+                    <h3>Premium Medications</h3>
+                    <p>Pharmaceutical-grade TRT delivered to your door</p>
+                </div>
+                <div class="reason-item">
+                    <img src="images/product-info.webp" alt="Ongoing Support">
+                    <h3>Ongoing Support</h3>
+                    <p>Continuous monitoring and dosage optimization</p>
+                </div>
+            </div>
+            
+            <div class="cta-center">
+                <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=homepage" class="btn-primary">Get Started Today</a>
             </div>
         </div>
     </section>
@@ -484,34 +595,42 @@
     <!-- How It Works -->
     <section class="how-it-works">
         <div class="how-it-works-content">
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">Start testosterone therapy in as little as 5 days</p>
+            <h2 class="section-title">start testosterone therapy in as little as 5 days</h2>
             
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Consultation & Testing</h3>
-                        <p>Meet with a licensed clinician online to review your symptoms and goals. Order lab testing to measure your testosterone levels.</p>
-                    </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <img src="images/day-1.webp" alt="Day 1">
+                    <div class="day-label">Day 1</div>
+                    <h3>Complete Your Assessment</h3>
+                    <p>Answer a few quick questions about your health and symptoms. Get matched with a licensed clinician who specializes in TRT.</p>
                 </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Review Your Results</h3>
-                        <p>Once your lab results are in, your clinician will analyze your biomarkers and create a personalized treatment plan.</p>
-                    </div>
+                <div class="timeline-item">
+                    <img src="images/day-3.webp" alt="Day 3">
+                    <div class="day-label">Day 3</div>
+                    <h3>Review Your Results</h3>
+                    <p>Complete your blood work and meet with your clinician to review your testosterone levels and create your personalized treatment plan.</p>
                 </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Get Your Medication</h3>
-                        <p>If prescribed, receive pharmaceutical-grade TRT medication delivered discreetly to your door with ongoing clinician support.</p>
-                    </div>
+                <div class="timeline-item">
+                    <img src="images/day-5.webp" alt="Day 5">
+                    <div class="day-label">Day 5</div>
+                    <h3>Start Your Treatment</h3>
+                    <p>Receive your prescription and medication delivered discreetly to your door. Begin your journey to optimal testosterone levels.</p>
                 </div>
             </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2>READY TO UPGRADE YOUR mind, body, and health?</h2>
+            <p>Start today for just $49, including a full blood work panel, clinician consultation and personalized plan.</p>
+            
+            <div class="offer-image">
+                <img src="images/offer-block.webp" alt="Special Offer">
+            </div>
+            
+            <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=homepage" class="btn-primary">Get started for $49</a>
         </div>
     </section>
     
