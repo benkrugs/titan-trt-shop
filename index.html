@@ -19,36 +19,84 @@
             color: #1a1a1a;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            padding-bottom: 80px;
         }
         
         /* Header */
         header {
-            background: #1a1a1a;
+            background: #000000;
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .header-content {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .logo {
             color: #FFFFFF;
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 700;
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+        }
+        
+        .members-btn {
+            border: 1px solid #FFFFFF;
+            color: #FFFFFF;
+            padding: 10px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .members-btn:hover {
+            background: #FFFFFF;
+            color: #000000;
+        }
+        
+        /* Scrolling Banner */
+        .banner {
+            background: #d1d5db;
+            color: #000000;
+            padding: 12px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .banner-content {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            white-space: nowrap;
+        }
+        
+        .banner-text {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 0 48px;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
         
         /* Hero Section */
         .hero {
-            background: #f8f9fa;
+            background: #000000;
             padding: 80px 24px;
+            color: #FFFFFF;
         }
         
         .hero-content {
@@ -74,6 +122,12 @@
             height: auto;
         }
         
+        .forbes-badge {
+            width: 120px;
+            height: auto;
+            margin-bottom: 24px;
+        }
+        
         .benefits-top {
             list-style: none;
             margin-bottom: 32px;
@@ -86,67 +140,42 @@
             margin-bottom: 16px;
             font-size: 16px;
             font-weight: 500;
-            color: #1a1a1a;
+            color: #FFFFFF;
         }
         
-        .benefits-top li::before {
-            content: "✓";
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            background: #10b981;
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 14px;
+        .benefits-top li svg {
+            width: 20px;
+            height: 20px;
             flex-shrink: 0;
         }
         
         .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 1.2;
+            font-size: 56px;
+            font-weight: 900;
+            line-height: 1.1;
             margin-bottom: 20px;
-            color: #1a1a1a;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #6c757d;
-            margin-bottom: 32px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
         
         .btn-primary {
             display: inline-block;
-            background: #0066FF;
+            background: #DC2626;
             color: white;
             text-decoration: none;
             padding: 18px 48px;
             border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 700;
             transition: background 0.3s, transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .btn-primary:hover {
-            background: #0052CC;
+            background: #B91C1C;
             transform: translateY(-2px);
-        }
-        
-        .badge-new {
-            display: inline-block;
-            background: #0066FF;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 16px;
         }
         
         /* Results Section */
@@ -188,14 +217,23 @@
         
         .result-item {
             text-align: center;
+            position: relative;
+        }
+        
+        .result-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
         
         .result-item img {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 16px;
-            margin-bottom: 20px;
+            object-position: center;
         }
         
         .result-item h3 {
@@ -294,7 +332,7 @@
         .timeline-item .day-label {
             font-size: 14px;
             font-weight: 700;
-            color: #0066FF;
+            color: #DC2626;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 8px;
@@ -349,6 +387,34 @@
             width: 100%;
             height: auto;
             border-radius: 16px;
+        }
+        
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #000000;
+            padding: 16px 24px;
+            box-shadow: 0 -4px 16px rgba(0,0,0,0.2);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+        
+        .sticky-cta-text {
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .sticky-cta .btn-primary {
+            padding: 14px 32px;
+            font-size: 15px;
         }
         
         /* Footer */
@@ -487,6 +553,17 @@
                 font-size: 32px;
             }
             
+            .sticky-cta {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 16px;
+            }
+            
+            .sticky-cta-text {
+                font-size: 13px;
+                text-align: center;
+            }
+            
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -504,22 +581,46 @@
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">TITAN</a>
+            <a href="#" class="members-btn">MEMBERS</a>
         </div>
     </header>
+    
+    <!-- Scrolling Banner -->
+    <div class="banner">
+        <div class="banner-content">
+            <span class="banner-text">SPECIAL OFFER: $100 Off Labs + Clinician Consultation</span>
+            <span class="banner-text">SPECIAL OFFER: $100 Off Labs + Clinician Consultation</span>
+            <span class="banner-text">SPECIAL OFFER: $100 Off Labs + Clinician Consultation</span>
+            <span class="banner-text">SPECIAL OFFER: $100 Off Labs + Clinician Consultation</span>
+            <span class="banner-text">SPECIAL OFFER: $100 Off Labs + Clinician Consultation</span>
+            <span class="banner-text">SPECIAL OFFER: $100 Off Labs + Clinician Consultation</span>
+        </div>
+    </div>
     
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
+                <img src="images/forbes-badge.webp" alt="Forbes 9.7/10" class="forbes-badge">
+                
+                <h1>Testosterone<br>Replacement<br>Therapy (TRT)</h1>
+                
                 <ul class="benefits-top">
-                    <li>Scientifically-proven TRT medications</li>
-                    <li>100% online & clinician-prescribed</li>
-                    <li>Free shipping & discreet packaging</li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                        Scientifically-proven TRT medications
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                        100% online & clinician-prescribed
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                        Free shipping & discreet packaging
+                    </li>
                 </ul>
-                <span class="badge-new">New</span>
-                <h1>Restore Your Vitality With Titan TRT</h1>
-                <p>Experience our most powerful TRT formula yet: a clinically tested, pharmaceutical-grade formulation designed to elevate both total & free testosterone levels for optimal results.</p>
-                <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=homepage" class="btn-primary">Get started for $49</a>
+                
+                <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=homepage" class="btn-primary">Get Started For $49 →</a>
             </div>
             <div class="hero-image">
                 <img src="images/hero-image.webp" alt="Titan TRT">
@@ -535,17 +636,23 @@
             
             <div class="results-grid">
                 <div class="result-item">
-                    <img src="images/energy.webp" alt="Increased Energy">
+                    <div class="result-image-wrapper">
+                        <img src="images/energy.webp" alt="Increased Energy">
+                    </div>
                     <h3>Increased Energy & Drive</h3>
                     <p>Feel more motivated and energized throughout your day</p>
                 </div>
                 <div class="result-item">
-                    <img src="images/sex-life.webp" alt="Enhanced Performance">
+                    <div class="result-image-wrapper">
+                        <img src="images/sex-life.webp" alt="Enhanced Performance">
+                    </div>
                     <h3>Enhanced Performance</h3>
                     <p>Boost your confidence and vitality where it matters most</p>
                 </div>
                 <div class="result-item">
-                    <img src="images/burn-fat.webp" alt="Better Body Composition">
+                    <div class="result-image-wrapper">
+                        <img src="images/burn-fat.webp" alt="Better Body Composition">
+                    </div>
                     <h3>Better Body Composition</h3>
                     <p>Build lean muscle and reduce body fat more effectively</p>
                 </div>
@@ -595,7 +702,7 @@
     <!-- How It Works -->
     <section class="how-it-works">
         <div class="how-it-works-content">
-            <h2 class="section-title">start testosterone therapy in as little as 5 days</h2>
+            <h2 class="section-title">Start Testosterone Therapy In As Little As 5 Days</h2>
             
             <div class="timeline">
                 <div class="timeline-item">
@@ -633,6 +740,12 @@
             <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=homepage" class="btn-primary">Get started for $49</a>
         </div>
     </section>
+    
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta">
+        <span class="sticky-cta-text">SPECIAL OFFER: $100 Off Labs + Clinician Consultation</span>
+        <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=homepage" class="btn-primary">Get Started Today</a>
+    </div>
     
     <!-- Footer -->
     <footer>
