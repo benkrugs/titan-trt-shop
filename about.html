@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Titan TRT</title>
+    <meta name="description" content="Learn about Titan TRT, our mission to provide accessible testosterone replacement therapy, and the team behind our products.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #FFFFFF;
+            color: #1a1a1a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        header {
+            background: #1a1a1a;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            color: #FFFFFF;
+            font-size: 22px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #495057;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #0066FF;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 32px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: #0066FF;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #495057;
+            margin-bottom: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #adb5bd;
+            padding: 48px 24px 32px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        
+        .footer-brand h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            color: #ffffff;
+        }
+        
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #adb5bd;
+        }
+        
+        .footer-brand a {
+            color: #0066FF;
+            text-decoration: none;
+        }
+        
+        .footer-links h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 32px;
+            border-top: 1px solid #343a40;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+        }
+        
+        .footer-legal {
+            flex: 1;
+            color: #6c757d;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+        
+        .footer-legal p {
+            margin-bottom: 12px;
+        }
+        
+        .legitscript-badge {
+            flex-shrink: 0;
+        }
+        
+        .legitscript-badge img {
+            height: 80px;
+            width: auto;
+        }
+        
+        @media (max-width: 968px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">TITAN</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>About Titan TRT</h1>
+        
+        <p>Titan TRT is operated by <strong>SSK Marketing LLC</strong>, a healthcare commerce company dedicated to making testosterone replacement therapy accessible, affordable, and transparent for men across the United States.</p>
+
+        <h2>Our Mission</h2>
+        <p>We believe that every man deserves access to effective, clinician-supervised testosterone replacement therapy without the high costs and inconvenience of traditional medical channels. Our mission is to bridge the gap between medical-grade TRT products and the patients who need them.</p>
+
+        <h2>How We Operate</h2>
+        <p>Titan TRT partners with licensed healthcare providers and compounding pharmacies to offer pharmaceutical-grade testosterone replacement therapy. We focus on three core principles:</p>
+
+        <ul>
+            <li><strong>Transparency:</strong> Clear pricing, honest product information, and no hidden fees</li>
+            <li><strong>Quality:</strong> Only pharmaceutical-grade medications from certified compounding pharmacies</li>
+            <li><strong>Accessibility:</strong> Making TRT available to men who need it, delivered discreetly to your door</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>Important:</strong> All Titan TRT products require a valid prescription from a licensed healthcare provider. We do not prescribe or dispense medications directly. Our platform connects customers with licensed clinicians who can evaluate, prescribe, and monitor testosterone replacement therapy.</p>
+        </div>
+
+        <h2>Product Information</h2>
+        <p>Our injectable testosterone is formulated with pharmaceutical-grade MCT oil for optimal absorption. Each 30-day supply is produced by certified compounding pharmacies that follow strict FDA guidelines and safety protocols.</p>
+
+        <h2>Compliance & Safety</h2>
+        <p>We operate in full compliance with federal and state regulations governing the sale and distribution of prescription medications. Our partner pharmacies are licensed, inspected, and certified to compound and dispense testosterone medications.</p>
+
+        <p>All transactions are verified through our partner healthcare network to ensure prescriptions are valid and medically appropriate. We maintain the highest standards for patient privacy and data security.</p>
+
+        <h2>Customer Support</h2>
+        <p>Our customer support team is available Monday through Friday, 9:00 AM - 6:00 PM EST to assist with:</p>
+        <ul>
+            <li>Product questions and ordering</li>
+            <li>Shipping and delivery tracking</li>
+            <li>Returns and refunds (see our <a href="refund-policy.html">Refund Policy</a>)</li>
+            <li>General inquiries</li>
+        </ul>
+
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>SSK Marketing LLC</strong></p>
+            <p>480 Morris Avenue<br>
+            Summit, NJ 07901</p>
+            <p>Email: <a href="mailto:support@titan-trt.com">support@titan-trt.com</a></p>
+            <p>Business Hours: Monday - Friday, 9:00 AM - 6:00 PM EST</p>
+        </div>
+
+        <h2>Verified & Certified</h2>
+        <p>Our partner clinics and pharmacies are LegitScript certified, ensuring that our operations meet the highest standards for online healthcare commerce. LegitScript is a third-party verification service that helps customers identify legitimate healthcare providers.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>TITAN</h3>
+                <p><strong>SSK Marketing LLC</strong><br>
+                480 Morris Avenue<br>
+                Summit, NJ 07901<br>
+                <a href="mailto:support@titan-trt.com">support@titan-trt.com</a></p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="refund-policy.html">Refund Policy</a></li>
+                    <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="payment-policy.html">Payment Policy</a></li>
+                    <li><a href="shipping-policy.html">Shipping Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li style="color: #6c757d; font-size: 14px; margin-top: 8px;">Monday - Friday<br>9:00 AM - 6:00 PM EST</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <p><strong>Important Information:</strong> Titan TRT provides testosterone replacement therapy through licensed healthcare providers. All medications require a valid prescription. Consult with a licensed healthcare provider for diagnosis or treatment decisions. Not suitable for women who are pregnant or may become pregnant.</p>
+                <p style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #343a40;">© 2026 SSK Marketing LLC. All rights reserved.</p>
+            </div>
+            <div class="legitscript-badge">
+                <a href="https://legitscript.com/websites/?checker_keywords=jointitan.com" target="_blank" rel="noopener">
+                    <img src="legitscript-badge.jpg" alt="LegitScript Certified">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
