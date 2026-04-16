@@ -473,7 +473,7 @@
                 </div>
 
                 <!-- CTA -->
-                <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=shop" class="cta-primary">Get Started</a>
+                <a href="https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=shop" class="cta-primary" id="cta-button">Get Started</a>
 
                 <!-- Benefits List -->
                 <ul class="benefits-list">
@@ -575,5 +575,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Pass through Google Ads tracking parameters to affiliate link
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButton = document.getElementById('cta-button');
+            if (!ctaButton) return;
+
+            const baseUrl = 'https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=shop';
+            
+            // Get URL parameters from current page
+            const urlParams = new URLSearchParams(window.location.search);
+            const gclid = urlParams.get('gclid') || '';
+            const wbraid = urlParams.get('wbraid') || '';
+            const gbraid = urlParams.get('gbraid') || '';
+            
+            // Build new URL with tracking parameters
+            let finalUrl = baseUrl;
+            if (gclid) finalUrl += '&gclid=' + encodeURIComponent(gclid);
+            if (wbraid) finalUrl += '&sub2=' + encodeURIComponent(wbraid);
+            if (gclid) finalUrl += '&sub3=' + encodeURIComponent(gclid);
+            if (gbraid) finalUrl += '&sub5=' + encodeURIComponent(gbraid);
+            
+            ctaButton.href = finalUrl;
+        });
+    </script>
 </body>
 </html>
