@@ -34,7 +34,7 @@
             font-size: 48px;
             font-weight: 900;
             letter-spacing: 8px;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             color: #ffffff;
         }
 
@@ -42,7 +42,7 @@
             font-size: 42px;
             font-weight: 900;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             text-align: center;
             text-transform: uppercase;
         }
@@ -56,7 +56,7 @@
             line-height: 1.6;
             color: #a0a0a0;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -65,8 +65,8 @@
         .question-section {
             background: #1a1a1a;
             border-radius: 16px;
-            padding: 48px 40px;
-            margin-bottom: 40px;
+            padding: 32px 32px;
+            margin-bottom: 32px;
         }
 
         .question-header {
@@ -118,6 +118,20 @@
         .answer-option.selected {
             background: #dc2626;
             border-color: #dc2626;
+        }
+
+        .answer-option.selected::after {
+            content: "✓";
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .answer-option {
+            position: relative;
         }
 
         .answer-option input[type="radio"] {
@@ -175,40 +189,64 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 20px 16px;
+            }
+
             .logo {
-                font-size: 36px;
-                letter-spacing: 6px;
-                margin-bottom: 40px;
+                font-size: 28px;
+                letter-spacing: 4px;
+                margin-bottom: 24px;
             }
 
             .headline {
-                font-size: 28px;
+                font-size: 22px;
+                margin-bottom: 12px;
             }
 
             .subheadline {
-                font-size: 16px;
-                margin-bottom: 40px;
+                font-size: 14px;
+                margin-bottom: 24px;
             }
 
             .question-section {
-                padding: 32px 24px;
+                padding: 24px 20px;
+                margin-bottom: 20px;
+            }
+
+            .question-header {
+                margin-bottom: 20px;
+            }
+
+            .question-icon {
+                font-size: 24px;
             }
 
             .question-title {
-                font-size: 22px;
+                font-size: 18px;
             }
 
             .question-text {
-                font-size: 18px;
+                font-size: 16px;
+                margin-bottom: 16px;
             }
 
             .answer-options {
                 grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .answer-option {
+                padding: 16px;
+            }
+
+            .answer-label {
+                font-size: 15px;
             }
 
             .cta-button {
-                padding: 20px 32px;
-                font-size: 18px;
+                padding: 18px 32px;
+                font-size: 16px;
             }
         }
     </style>
@@ -273,6 +311,26 @@
         const startButton = document.getElementById('start-assessment');
         const radioInputs = document.querySelectorAll('input[name="energy"]');
 
+        function redirectToAffiliate() {
+            // Get URL parameters from current page (for passing through tracking params)
+            const urlParams = new URLSearchParams(window.location.search);
+            const gclid = urlParams.get('gclid') || '';
+            const wbraid = urlParams.get('wbraid') || '';
+            const gbraid = urlParams.get('gbraid') || '';
+            
+            // Build affiliate URL
+            let affiliateUrl = 'https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=quiz';
+            
+            // Append tracking parameters if they exist
+            if (gclid) affiliateUrl += '&gclid=' + encodeURIComponent(gclid);
+            if (wbraid) affiliateUrl += '&sub2=' + encodeURIComponent(wbraid);
+            if (gclid) affiliateUrl += '&sub3=' + encodeURIComponent(gclid);
+            if (gbraid) affiliateUrl += '&sub5=' + encodeURIComponent(gbraid);
+            
+            // Redirect to affiliate quiz
+            window.location.href = affiliateUrl;
+        }
+
         options.forEach(option => {
             option.addEventListener('click', function() {
                 // Remove selected class from all options
@@ -287,32 +345,18 @@
                 
                 // Enable start button
                 startButton.disabled = false;
+                
+                // Auto-advance after 500ms delay (gives visual feedback)
+                setTimeout(() => {
+                    redirectToAffiliate();
+                }, 500);
             });
         });
 
-        // Handle start assessment button
+        // Handle start assessment button (in case user clicks it manually)
         startButton.addEventListener('click', function() {
             if (!this.disabled) {
-                // Get selected answer (optional: could track this)
-                const selectedAnswer = document.querySelector('input[name="energy"]:checked');
-                
-                // Get URL parameters from current page (for passing through tracking params)
-                const urlParams = new URLSearchParams(window.location.search);
-                const gclid = urlParams.get('gclid') || '';
-                const wbraid = urlParams.get('wbraid') || '';
-                const gbraid = urlParams.get('gbraid') || '';
-                
-                // Build affiliate URL
-                let affiliateUrl = 'https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=quiz';
-                
-                // Append tracking parameters if they exist
-                if (gclid) affiliateUrl += '&gclid=' + encodeURIComponent(gclid);
-                if (wbraid) affiliateUrl += '&sub2=' + encodeURIComponent(wbraid);
-                if (gclid) affiliateUrl += '&sub3=' + encodeURIComponent(gclid);
-                if (gbraid) affiliateUrl += '&sub5=' + encodeURIComponent(gbraid);
-                
-                // Redirect to affiliate quiz
-                window.location.href = affiliateUrl;
+                redirectToAffiliate();
             }
         });
     </script>
