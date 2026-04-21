@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRT Assessment - Titan</title>
+    <meta name="description" content="Take our 60-second assessment to discover if testosterone replacement therapy is right for you.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: 8px;
+            margin-bottom: 60px;
+            color: #ffffff;
+        }
+
+        .headline {
+            font-size: 42px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .headline .highlight {
+            color: #dc2626;
+        }
+
+        .subheadline {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #a0a0a0;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .question-section {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 48px 40px;
+            margin-bottom: 40px;
+        }
+
+        .question-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .question-icon {
+            font-size: 32px;
+        }
+
+        .question-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .question-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .answer-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .answer-option {
+            background: #262626;
+            border: 2px solid #333333;
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .answer-option:hover {
+            background: #2a2a2a;
+            border-color: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .answer-option.selected {
+            background: #dc2626;
+            border-color: #dc2626;
+        }
+
+        .answer-option input[type="radio"] {
+            display: none;
+        }
+
+        .answer-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: #dc2626;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            padding: 24px 48px;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.4);
+        }
+
+        .cta-button:disabled {
+            background: #4a4a4a;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .cta-arrow {
+            margin-left: 8px;
+            font-size: 24px;
+        }
+
+        .privacy-note {
+            text-align: center;
+            font-size: 13px;
+            color: #666666;
+            margin-top: 24px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 36px;
+                letter-spacing: 6px;
+                margin-bottom: 40px;
+            }
+
+            .headline {
+                font-size: 28px;
+            }
+
+            .subheadline {
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+
+            .question-section {
+                padding: 32px 24px;
+            }
+
+            .question-title {
+                font-size: 22px;
+            }
+
+            .question-text {
+                font-size: 18px;
+            }
+
+            .answer-options {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                padding: 20px 32px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">TITAN</div>
+
+        <h1 class="headline">
+            Take our 60-second assessment to <span class="highlight">discover if TRT is right for you</span>
+        </h1>
+
+        <p class="subheadline">
+            Titan's quick assessment analyzes key lifestyle & symptom patterns to show how closely they align with signs of Low T.
+        </p>
+
+        <div class="question-section">
+            <div class="question-header">
+                <span class="question-icon">⚡</span>
+                <h2 class="question-title">Energy & Vitality</h2>
+            </div>
+
+            <p class="question-text">
+                How would you describe your energy levels throughout the day?
+            </p>
+
+            <div class="answer-options">
+                <label class="answer-option" id="option-1">
+                    <input type="radio" name="energy" value="low" required>
+                    <span class="answer-label">Low energy, often fatigued</span>
+                </label>
+
+                <label class="answer-option" id="option-2">
+                    <input type="radio" name="energy" value="moderate" required>
+                    <span class="answer-label">Moderate, some good days</span>
+                </label>
+
+                <label class="answer-option" id="option-3">
+                    <input type="radio" name="energy" value="declining" required>
+                    <span class="answer-label">Used to be higher, declining</span>
+                </label>
+
+                <label class="answer-option" id="option-4">
+                    <input type="radio" name="energy" value="normal" required>
+                    <span class="answer-label">Normal, no major issues</span>
+                </label>
+            </div>
+        </div>
+
+        <button class="cta-button" id="start-assessment" disabled>
+            Start Assessment <span class="cta-arrow">→</span>
+        </button>
+
+        <p class="privacy-note">
+            Your information is private and secure. This assessment takes approximately 60 seconds to complete.
+        </p>
+    </div>
+
+    <script>
+        // Handle answer selection
+        const options = document.querySelectorAll('.answer-option');
+        const startButton = document.getElementById('start-assessment');
+        const radioInputs = document.querySelectorAll('input[name="energy"]');
+
+        options.forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                options.forEach(opt => opt.classList.remove('selected'));
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                // Check the radio input
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+                
+                // Enable start button
+                startButton.disabled = false;
+            });
+        });
+
+        // Handle start assessment button
+        startButton.addEventListener('click', function() {
+            if (!this.disabled) {
+                // Get selected answer (optional: could track this)
+                const selectedAnswer = document.querySelector('input[name="energy"]:checked');
+                
+                // Get URL parameters from current page (for passing through tracking params)
+                const urlParams = new URLSearchParams(window.location.search);
+                const gclid = urlParams.get('gclid') || '';
+                const wbraid = urlParams.get('wbraid') || '';
+                const gbraid = urlParams.get('gbraid') || '';
+                
+                // Build affiliate URL
+                let affiliateUrl = 'https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=quiz';
+                
+                // Append tracking parameters if they exist
+                if (gclid) affiliateUrl += '&gclid=' + encodeURIComponent(gclid);
+                if (wbraid) affiliateUrl += '&sub2=' + encodeURIComponent(wbraid);
+                if (gclid) affiliateUrl += '&sub3=' + encodeURIComponent(gclid);
+                if (gbraid) affiliateUrl += '&sub5=' + encodeURIComponent(gbraid);
+                
+                // Redirect to affiliate quiz
+                window.location.href = affiliateUrl;
+            }
+        });
+    </script>
+</body>
+</html>
