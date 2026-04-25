@@ -6,6 +6,15 @@
     <title>TRT Assessment - Titan</title>
     <meta name="description" content="Take our 60-second assessment to discover if testosterone replacement therapy is right for you.">
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17044910727"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17044910727');
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -345,6 +354,16 @@
                 
                 // Enable start button
                 startButton.disabled = false;
+                
+                // Fire Google Ads conversion event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-17044910727/LV_3CMeYuaIcEIfl0r8_',
+                        'value': 20.0,
+                        'currency': 'USD',
+                        'transaction_id': ''
+                    });
+                }
                 
                 // Auto-advance after 500ms delay (gives visual feedback)
                 setTimeout(() => {
