@@ -321,20 +321,16 @@
         const radioInputs = document.querySelectorAll('input[name="energy"]');
 
         function redirectToAffiliate() {
-            // Get URL parameters from current page (for passing through tracking params)
-            const urlParams = new URLSearchParams(window.location.search);
-            const gclid = urlParams.get('gclid') || '';
-            const wbraid = urlParams.get('wbraid') || '';
-            const gbraid = urlParams.get('gbraid') || '';
-            
-            // Build affiliate URL
+            // Build base affiliate URL
             let affiliateUrl = 'https://jointitan.com/quiz/?tn_campaign=TRT2026&utm_source=theoffer&utm_campaign=94&toclid=TO-4lkEZoc0WhZvkl8AMOkhnK&sub1=quiz';
             
-            // Append tracking parameters if they exist
-            if (gclid) affiliateUrl += '&gclid=' + encodeURIComponent(gclid);
-            if (wbraid) affiliateUrl += '&sub2=' + encodeURIComponent(wbraid);
-            if (gclid) affiliateUrl += '&sub3=' + encodeURIComponent(gclid);
-            if (gbraid) affiliateUrl += '&sub5=' + encodeURIComponent(gbraid);
+            // Get all URL parameters from current page
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Pass through all parameters (gclid, sub2, sub3, sub5, etc)
+            urlParams.forEach((value, key) => {
+                affiliateUrl += '&' + encodeURIComponent(key) + '=' + encodeURIComponent(value);
+            });
             
             // Redirect to affiliate quiz
             window.location.href = affiliateUrl;
