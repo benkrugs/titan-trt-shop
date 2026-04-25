@@ -473,7 +473,7 @@
                 </div>
 
                 <!-- CTA -->
-                <a href="quiz-start.html" class="cta-primary">Get Started</a>
+                <a href="quiz-start.html" class="cta-primary" id="cta-link">Get Started</a>
 
                 <!-- Benefits List -->
                 <ul class="benefits-list">
@@ -575,5 +575,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Pass through URL parameters to quiz page
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaLink = document.getElementById('cta-link');
+            if (!ctaLink) return;
+
+            // Get all URL parameters from current page
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // If there are parameters, append them to the CTA link
+            if (urlParams.toString()) {
+                const currentHref = ctaLink.getAttribute('href');
+                const separator = currentHref.includes('?') ? '&' : '?';
+                ctaLink.setAttribute('href', currentHref + separator + urlParams.toString());
+            }
+        });
+    </script>
 </body>
 </html>
