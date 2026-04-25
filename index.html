@@ -799,5 +799,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Pass through URL parameters to all quiz links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all URL parameters from current page
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // If there are parameters, append them to all quiz-start.html links
+            if (urlParams.toString()) {
+                const quizLinks = document.querySelectorAll('a[href*="quiz-start.html"]');
+                quizLinks.forEach(link => {
+                    const currentHref = link.getAttribute('href');
+                    const separator = currentHref.includes('?') ? '&' : '?';
+                    link.setAttribute('href', currentHref + separator + urlParams.toString());
+                });
+            }
+        });
+    </script>
 </body>
 </html>
